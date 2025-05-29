@@ -16,41 +16,34 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Documentation generator for Java code using LLM.
 """
+import json
 import logging
-from typing import List, Optional, Dict, Any
-from dataclasses import dataclass
+import uuid
+from pathlib import Path
+from typing import Optional
 
-from java.models import JavaCodeData, JavaMethod, JavaClass, MethodReference
+from java.models import JavaCodeData, JavaMethod, JavaClass, MethodReference, MethodSource
 from config import LLMConfig
 from .javadoc_generator import JavaDocGenerator
-
-
-@dataclass
-class DocumentationStats:
-    """Statistics about documentation generation."""
-    total_methods_processed: int = 0
-    methods_without_docs: int = 0
-    successful_generations: int = 0
-    failed_generations: int = 0
-    classes_without_docs: int = 0
-    classes_doc_generated: int = 0
-    
-    @property
-    def success_rate(self) -> float:
-        """Calculate success rate for method documentation."""
-        if self.methods_without_docs == 0:
-            return 100.0
-        return (self.successful_generations / self.methods_without_docs) * 100.0
 
 
 class JavaDocumentationGenerator:
     """Generates missing JavaDoc documentation for Java code."""
 
-    def __init__(self, llm_config: Optional[LLMConfig] = None):
-        """Initialize the documentation generator."""
+    def __init__(self, llm_config: Optional[LLMConfig] = None, output_dir: str = "generated"):
+        """
+        Initialize the documentation generator.
+        
+        Args:
+            llm_config: LLM configuration
+            output_dir: Directory to save generated documentation files
+        """
         self.javadoc_generator = JavaDocGenerator(llm_config)
         self.logger = logging.getLogger(__name__)
-        self.stats = DocumentationStats()
+        self.output_dir = Path(output_dir)
+
+        # Create output directory if it doesn't exist
+        self.output_dir.mkdir(parents=True, exist_ok=True)
 
     def generate_missing_documentation(self, java_data: JavaCodeData,
                                        include_classes: bool = True) -> JavaCodeData:
@@ -71,9 +64,6 @@ class JavaDocumentationGenerator:
             self.logger.error("JavaDoc generator is not ready. Please ensure Ollama is running and the model is available.")
             raise RuntimeError("JavaDoc generator not ready")
 
-        # Reset stats
-        self.stats = DocumentationStats()
-
         # Generate documentation for methods
         self._generate_method_documentation(java_data)
 
@@ -90,9 +80,6 @@ class JavaDocumentationGenerator:
         """Generate documentation for methods without JavaDoc."""
         methods_without_docs = [method for method in java_data.methods
                                 if not method.java_doc]
-
-        self.stats.methods_without_docs = len(methods_without_docs)
-        self.stats.total_methods_processed = len(java_data.methods)
 
         self.logger.info(f"Found {len(methods_without_docs)} methods without documentation")
 
@@ -112,18 +99,17 @@ class JavaDocumentationGenerator:
 
             if documentation:
                 method.java_doc = documentation
-                self.stats.successful_generations += 1
                 self.logger.debug(f"Generated docs for {method.src.class_name}.{method.src.method_name}")
+
+                # Save to file immediately
+                self._save_method_to_file(method)
             else:
-                self.stats.failed_generations += 1
                 self.logger.warning(f"Failed to generate docs for {method.src.class_name}.{method.src.method_name}")
 
     def _generate_class_documentation(self, java_data: JavaCodeData):
         """Generate documentation for classes without JavaDoc."""
         classes_without_docs = [cls for cls in java_data.classes
                                 if not cls.java_doc]
-
-        self.stats.classes_without_docs = len(classes_without_docs)
 
         self.logger.info(f"Found {len(classes_without_docs)} classes without documentation")
 
@@ -142,10 +128,82 @@ class JavaDocumentationGenerator:
 
             if documentation:
                 java_class.java_doc = documentation
-                self.stats.classes_doc_generated += 1
                 self.logger.debug(f"Generated docs for class {java_class.class_name}")
+
+                # Save to file immediately
+                self._save_class_to_file(java_class)
             else:
                 self.logger.warning(f"Failed to generate docs for class {java_class.class_name}")
+
+    def _save_method_to_file(self, method: JavaMethod):
+        """
+        Save method with generated documentation to a JSON file.
+        
+        Args:
+            method: The JavaMethod object with generated documentation
+        """
+        try:
+            # Generate unique filename
+            file_id = str(uuid.uuid4())
+            filename = f"{file_id}.json"
+            filepath = self.output_dir / filename
+
+            # Convert method to dictionary format similar to original data
+            method_data = {
+                "type": "method",
+                "src": {
+                    "className": method.src.class_name,
+                    "methodName": method.src.method_name
+                },
+                "javaDoc": method.java_doc,
+                "code": method.code,
+                "dstMethods": [
+                    {
+                        "className": dep.class_name,
+                        "methodName": dep.method_name
+                    }
+                    for dep in method.dst_methods
+                ]
+            }
+
+            # Write to file
+            with open(filepath, 'w', encoding='utf-8') as f:
+                json.dump(method_data, f, indent=2, ensure_ascii=False)
+
+            self.logger.debug(f"Saved method documentation to {filepath}")
+
+        except Exception as e:
+            self.logger.error(f"Failed to save method {method.src.class_name}.{method.src.method_name} to file: {e}")
+
+    def _save_class_to_file(self, java_class: JavaClass):
+        """
+        Save class with generated documentation to a JSON file.
+        
+        Args:
+            java_class: The JavaClass object with generated documentation
+        """
+        try:
+            # Generate unique filename
+            file_id = str(uuid.uuid4())
+            filename = f"{file_id}.json"
+            filepath = self.output_dir / filename
+
+            # Convert class to dictionary format similar to original data
+            class_data = {
+                "type": "class",
+                "className": java_class.class_name,
+                "javaDoc": java_class.java_doc,
+                "code": java_class.code
+            }
+
+            # Write to file
+            with open(filepath, 'w', encoding='utf-8') as f:
+                json.dump(class_data, f, indent=2, ensure_ascii=False)
+
+            self.logger.debug(f"Saved class documentation to {filepath}")
+
+        except Exception as e:
+            self.logger.error(f"Failed to save class {java_class.class_name} to file: {e}")
 
     def _create_method_context(self, method: JavaMethod, java_data: JavaCodeData) -> str:
         """Create context information for a method."""
@@ -163,15 +221,6 @@ class JavaDocumentationGenerator:
         if method.dst_methods:
             deps = [f"{dep.class_name}.{dep.method_name}" for dep in method.dst_methods]
             context_parts.append(f"Method calls: {', '.join(deps[:3])}")  # Limit to first 3
-
-        # Add method signature analysis
-        if "public" in method.code:
-            context_parts.append("This is a public method")
-        elif "private" in method.code:
-            context_parts.append("This is a private method")
-
-        if "static" in method.code:
-            context_parts.append("This is a static method")
 
         return ". ".join(context_parts) if context_parts else ""
 
@@ -199,20 +248,3 @@ class JavaDocumentationGenerator:
             context_parts.append(f"Contains {len(class_methods)} methods")
 
         return ". ".join(context_parts) if context_parts else ""
-
-    def _log_final_stats(self):
-        """Log the final generation statistics."""
-        self.logger.info("Documentation generation completed")
-        self.logger.info(f"Methods processed: {self.stats.total_methods_processed}")
-        self.logger.info(f"Methods without docs: {self.stats.methods_without_docs}")
-        self.logger.info(f"Successful generations: {self.stats.successful_generations}")
-        self.logger.info(f"Failed generations: {self.stats.failed_generations}")
-        self.logger.info(f"Success rate: {self.stats.success_rate:.1f}%")
-
-        if self.stats.classes_without_docs > 0:
-            self.logger.info(f"Classes without docs: {self.stats.classes_without_docs}")
-            self.logger.info(f"Class docs generated: {self.stats.classes_doc_generated}")
-
-    def get_statistics(self) -> DocumentationStats:
-        """Get the generation statistics."""
-        return self.stats

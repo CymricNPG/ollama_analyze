@@ -28,6 +28,7 @@ class Config:
     # File paths
     CLASSES_FILE = "java_classes.json"
     METHODS_FILE = "java_methods.json"
+    OUTPUT_DIR = "generated"
 
     # Logging configuration
     LOG_LEVEL = logging.INFO
@@ -61,6 +62,12 @@ class Config:
         methods_file = base / cls.METHODS_FILE
 
         return str(classes_file), str(methods_file)
+
+    @classmethod
+    def get_output_dir(cls, base_path: str = ".") -> str:
+        base = Path(base_path)
+        return str(base / cls.OUTPUT_DIR)
+
 
 @dataclass
 class LLMConfig:

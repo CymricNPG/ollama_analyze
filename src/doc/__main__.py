@@ -25,7 +25,7 @@ from java.models import JavaCodeData
 logger = logging.getLogger(__name__)
 
 
-def generate_documentation(java_data: JavaCodeData) -> JavaCodeData:
+def generate_documentation(java_data: JavaCodeData, base_dir :str='.') -> JavaCodeData:
     """Generate missing documentation for Java code."""
 
     logger.info("Starting documentation generation phase")
@@ -34,7 +34,7 @@ def generate_documentation(java_data: JavaCodeData) -> JavaCodeData:
     llm_config = LLMConfig()
 
     # Initialize documentation generator
-    doc_generator = JavaDocumentationGenerator(llm_config)
+    doc_generator = JavaDocumentationGenerator(llm_config, Config.get_output_dir(base_dir))
 
     # Generate documentation
     updated_data = doc_generator.generate_missing_documentation(java_data)
@@ -51,7 +51,7 @@ def main():
     builder.Config.setup_logging()
 
     java_data = builder.read_structure("../data/")
-    new_data = generate_documentation(java_data)
+    new_data = generate_documentation(java_data, "../data/")
 
 
 if __name__ == "__main__":
