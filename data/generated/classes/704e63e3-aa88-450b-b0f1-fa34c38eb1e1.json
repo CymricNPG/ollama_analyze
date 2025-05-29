@@ -1,0 +1,4 @@
+{
+  "className": "jfreerails.world.cargo.CargoBundle",
+  "javaDoc": "/**\n* Represents a collection of CargoBatch objects, providing methods to iterate over batches,\n* check for their presence, retrieve amounts by batch or cargo type, and determine the size.\n* The iterator is fail-fast and throws ConcurrentModificationException if the bundle is modified\n* while iterating.\n*\n* @see CargoBatch\n*/"
+}

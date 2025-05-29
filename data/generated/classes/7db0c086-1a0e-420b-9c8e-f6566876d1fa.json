@@ -1,0 +1,4 @@
+{
+  "className": "jfreerails.world.train.CompositeSpeedAgainstTimeTest",
+  "javaDoc": "/**\n* Test class for the CompositeSpeedAgainstTime class, verifying its correctness\n* and adherence to expected contracts. This class contains test cases to validate\n* boundary conditions, calculation accuracy, and contract compliance for composite\n* speed-time relationships.\n*\n* @see CompositeSpeedAgainstTime\n* @see SpeedAgainstTime\n* @see ConstAccTest\n*/"
+}

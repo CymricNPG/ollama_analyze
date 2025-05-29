@@ -1,0 +1,4 @@
+{
+  "className": "jfreerails.util.List2DDiffTest",
+  "javaDoc": "/**\n* Tests the List2DDiff class, which manages differences in a 2D list structure.\n* This class verifies the correctness of various methods including size checks,\n* element retrieval, addition, removal, and boundary conditions.\n*\n* @see jfreerails.util.List2DDiff\n*/"
+}

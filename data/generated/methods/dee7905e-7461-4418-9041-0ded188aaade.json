@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.network.SynchronizedFlag",
+    "methodName": "SynchronizedFlag"
+  },
+  "javaDoc": "/**\n* Constructs a new SynchronizedFlag with the specified open state.\n*\n* @param b the initial value for the 'isOpen' field, indicating whether the flag is open\n*/"
+}

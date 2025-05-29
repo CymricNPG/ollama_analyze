@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.util.Pair",
+    "methodName": "equals"
+  },
+  "javaDoc": "/**\n* Compares this Pair object with the specified Pair object for equality.\n* Two Pair objects are considered equal if both their elements are equal.\n*\n* @param other the Pair object to compare with\n* @return true if the objects are equal, false otherwise\n*/"
+}

@@ -1,0 +1,4 @@
+{
+  "className": "jfreerails.world.common.ImIntsTest",
+  "javaDoc": "/**\n* Test class for the ImInts class, verifying the functionality of its methods.\n* This class contains test cases for the append, removeLast, and equals methods.\n*\n* @see ImInts\n*/"
+}

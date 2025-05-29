@@ -1,0 +1,4 @@
+{
+  "className": "jfreerails.util.ListXDTest",
+  "javaDoc": "/**\n* Test class for verifying the functionality of multi-dimensional list implementations.\n* This class contains test cases for adding and removing elements, checking hash codes and equality,\n* and validating specific behaviors of 3D lists. It uses JUnit's TestCase framework for assertions.\n*\n* @author [Author Name]\n* @see List1D\n* @see List2D\n* @see List3D\n* @see List1DImpl\n* @see List2DImpl\n* @see List3DImpl\n*/"
+}

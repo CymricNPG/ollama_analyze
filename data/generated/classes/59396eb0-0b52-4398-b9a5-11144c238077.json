@@ -1,0 +1,4 @@
+{
+  "className": "jfreerails.util.Lists",
+  "javaDoc": "/**\n* Utility class providing methods to compare lists of different dimensions for equality.\n* <p>\n* This class contains static methods to check if two lists (1D, 2D, or 3D) are equal by\n* recursively comparing their elements using the Utils.equal method.\n* </p>\n* @see List1D\n* @see List2D\n* @see List3, List3D\n* @see Utils\n*/"
+}

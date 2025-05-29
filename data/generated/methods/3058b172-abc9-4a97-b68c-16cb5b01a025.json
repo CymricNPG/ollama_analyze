@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.world.top.ReadOnlyWorld",
+    "methodName": "getTransactionAndTimeStamp"
+  },
+  "javaDoc": "/**\n* Retrieves the transaction and game time associated with the specified principal and index.\n*\n* @param p the FreerailsPrincipal representing the user or entity making the transaction\n* @param i the index or identifier used to locate the specific transaction\n* @return a Pair containing the transaction and the corresponding game time\n*/"
+}

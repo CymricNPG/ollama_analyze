@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.util.ListXDDiffs",
+    "methodName": "setSize"
+  },
+  "javaDoc": "/**\n* Updates the diffs map by either removing or adding a size entry based on the provided dimensions.\n* If the current underlying size matches the specified size, the corresponding entry is removed.\n* Otherwise, a new entry is added with the specified size.\n*\n* @param size   The new size value to set for the specified dimensions.\n* @param dim    Variable-length argument array representing the dimensions used to identify the size key.\n*/"
+}

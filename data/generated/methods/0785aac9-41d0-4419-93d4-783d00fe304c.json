@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.controller.Map",
+    "methodName": "moveForward"
+  },
+  "javaDoc": "/**\n* Moves the entity forward by updating its position to the vertex connected by the current edge.\n* This method retrieves the connected vertex using {@link #getVertexConnectedByEdge()} and sets it as the new position via {@link #setPosition(Object)}.\n*/"
+}

@@ -1,0 +1,4 @@
+{
+  "className": "jfreerails.util.ListXDDiffs",
+  "javaDoc": "/**\n* Manages and tracks differences in a multi-dimensional list structure, providing methods to add, remove, and retrieve elements while maintaining diff information for comparison or versioning purposes.\n* This abstract class serves as a base for implementing list diff tracking mechanisms, encapsulating operations to modify the list and persist changes in a {@link SortedMap} of {@link ListKey} entries.\n*\n* @author YourName\n* @since 1.0\n*\n* @see ListKey\n* @see SortedMap\n* @see Serializable\n*/"
+}

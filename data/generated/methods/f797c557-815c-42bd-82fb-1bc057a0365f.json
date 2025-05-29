@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.world.track.LegalTrackConfigurations",
+    "methodName": "equals"
+  },
+  "javaDoc": "/**\n* Compares this LegalTrackConfigurations object with the specified object for equality.\n* Two LegalTrackConfigurations objects are considered equal if they have the same maximum\n* consecutive pieces value and their legal configurations sets are equal.\n*\n* @param o the object to compare with\n* @return true if the objects are equal, false otherwise\n*/"
+}

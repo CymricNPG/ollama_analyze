@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.world.train.TrainPositionOnMap",
+    "methodName": "addToHead"
+  },
+  "javaDoc": "/**\n* Adds the specified train position to the head of this train's position list.\n* This method creates a new TrainPositionOnMap instance where the given position\n* is placed at the head (front) of the sequence. The original position remains unchanged.\n*\n* @param b the TrainPositionOnMap instance to add to the head of this position\n* @return a new TrainPositionOnMap instance with the specified position added to the head\n*/"
+}

@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.world.top.ActivityIteratorImpl",
+    "methodName": "nextActivity"
+  },
+  "javaDoc": "/**\n* Advances the iterator to the next activity in the sequence.\n* This method first checks if there is a next activity using {@link #hasNext()}.\n* If no next activity exists, a {@link NoSuchElementException} is thrown.\n* Otherwise, the internal activity index is incremented, and the next activity\n* is retrieved from the current list.\n*\n* @throws NoSuchElementException if there are no more activities to retrieve.\n*/"
+}

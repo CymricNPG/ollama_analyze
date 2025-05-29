@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.client.view.MapViewJComponent",
+    "methodName": "centerOnTile"
+  },
+  "javaDoc": "/**\n* Centers the view on the specified tile coordinates.\n*\n* @param tile the tile coordinates to center the view on\n*/"
+}

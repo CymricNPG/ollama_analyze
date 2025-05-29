@@ -73,7 +73,7 @@ class ClassDocumentationGenerator(BaseDocumentationGenerator):
             )
 
             if documentation:
-                new_class = JavaUpdateClass(class_name=-java_class.class_name, java_doc=documentation)
+                new_class = JavaUpdateClass(class_name=java_class.class_name, java_doc=documentation)
                 self.logger.debug(f"Generated docs for class {java_class.class_name}")
 
                 # Save to file immediately

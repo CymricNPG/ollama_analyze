@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.world.common.StepTest",
+    "methodName": "StepTest"
+  },
+  "javaDoc": "/**\n* Constructs a new StepTest instance with the specified argument.\n*\n* @param arg0 the input string used to initialize the StepTest object\n*/"
+}

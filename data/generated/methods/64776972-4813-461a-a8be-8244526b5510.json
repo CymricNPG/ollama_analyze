@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.world.train.TrainPositionOnMap",
+    "methodName": "reverse"
+  },
+  "javaDoc": "/**\n* Returns a new TrainPositionOnMap instance with the coordinates reversed.\n* This method creates a new TrainPositionOnMap object where the xpoints and ypoints\n* arrays are reversed in order, while preserving the speed, acceleration, and\n* activity values from the original instance.\n*\n* @return A new TrainPositionOnMap instance representing the reversed position.\n*/"
+}

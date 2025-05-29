@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.controller.FlatTrackExplorer",
+    "methodName": "getPosition"
+  },
+  "javaDoc": "/**\n* Returns the integer representation of the current position on the track.\n* This method delegates to the {@code toInt()} method of the\n* {@code PositionOnTrack} class to convert the current position to an integer.\n*\n* @return the integer value of the current position on the track\n*/"
+}

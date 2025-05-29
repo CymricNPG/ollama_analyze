@@ -1,0 +1,4 @@
+{
+  "className": "jfreerails.world.train.ConstAcc",
+  "javaDoc": "/**\n* Represents motion under constant acceleration, providing methods to calculate position, velocity, time, and other kinematic properties.\n* This class encapsulates the parameters of constant acceleration motion (initial velocity, acceleration, final time, and final position)\n* and includes utility methods to compute derived values based on time or displacement.\n*\n* @author John Doe\n* @since 1.0\n*\n* @see FreerailsSerializable\n* @see SpeedAgainstTime\n*/"
+}

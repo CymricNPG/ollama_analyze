@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.server.TrainUpdater",
+    "methodName": "trainPos2Tiles"
+  },
+  "javaDoc": "/**\n* Converts a train's position on the map into an array of tile coordinates.\n* Each tile coordinate is calculated by dividing the train's X and Y positions\n* by the TILE_WIDTH (30) to map the continuous position to a grid of tiles.\n*\n* @param pos The train's position on the map, which contains methods to retrieve\n*            the X, Y coordinates, and the length (number of tiles the train occupies)\n* @return An array of ImPoint objects representing the tile coordinates for each\n*         segment of the train's position\n*/"
+}

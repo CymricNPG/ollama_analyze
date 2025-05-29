@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.world.top.TestActivity",
+    "methodName": "duration"
+  },
+  "javaDoc": "/**\n* Returns the duration value stored in this object.\n*\n* @return the duration in seconds\n*/"
+}

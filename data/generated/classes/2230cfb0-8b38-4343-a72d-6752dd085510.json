@@ -1,0 +1,4 @@
+{
+  "className": "jfreerails.move.AddActiveEntityMoveTest",
+  "javaDoc": "/**\n* Tests the AddActiveEntityMove class to ensure it correctly handles\n* serialization, non-repeatability, and failure on repeated moves.\n*\n* This test case verifies that an AddActiveEntityMove instance can be\n* serialized and deserialized without issues, that it is not repeatable,\n* and that attempting to move again after an initial move fails.\n*\n* @author John Doe\n* @see AddActiveEntityMove\n* @see WorldImplTest.TestActivity\n*/"
+}

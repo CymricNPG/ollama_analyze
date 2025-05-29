@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.network.specifics.LogOnRequest",
+    "methodName": "LogOnRequest"
+  },
+  "javaDoc": "/**\n* Constructs a new LogOnRequest object with the specified username and password.\n*\n* @param username The username of the user attempting to log on.\n* @param password The password associated with the user's account.\n*/"
+}

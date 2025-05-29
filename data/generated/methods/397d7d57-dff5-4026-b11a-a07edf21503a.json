@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.client.common.RepaintManagerForActiveRendering",
+    "methodName": "addDirtyRegion"
+  },
+  "javaDoc": "/**\n* Overrides the addDirtyRegion method to determine whether to add a dirty region\n* for repainting based on the component's ancestor hierarchy. If the component\n* has a different ancestor (as determined by {@link #hasDifferentAncestor(JComponent)}),\n* the superclass's method is called to add the dirty region. Otherwise, a repaint\n* request counter is incremented.\n*\n* @param c the component for which the dirty region is being added\n* @param x the x-coordinate of the top-left corner of the dirty region\n* @param y the y-coordinate of the top-left corner of the dirty region\n* @param w the width of the dirty region\n* @param h the height of the dirty region\n*/"
+}

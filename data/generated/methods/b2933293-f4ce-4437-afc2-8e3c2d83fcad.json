@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.client.view.LoadGameJPanel",
+    "methodName": "cancelButtonActionPerformed"
+  },
+  "javaDoc": "/**\n* Handles the action event triggered when the cancel button is pressed.\n* If the {@code close} object is not null, this method delegates the action\n* to the {@code close}'s actionPerformed method with the provided event.\n*\n* @param evt the {@code ActionEvent} triggered by the cancel button action\n*/"
+}

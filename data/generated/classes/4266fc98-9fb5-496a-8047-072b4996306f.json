@@ -1,0 +1,4 @@
+{
+  "className": "jfreerails.move.WorldDiffsMoveTest",
+  "javaDoc": "/**\n* Tests the functionality of the WorldDiffs and WorldDiffMove classes to ensure they correctly capture, apply, and undo changes to the world state.\n* This class verifies scenarios such as modifying tiles, lists, transactions, and activities, ensuring diffs are accurately tracked and moves are serialized and reversible.\n*\n* @author John Doe\n* @see WorldDiffs\n* @see WorldDiffMove\n* @see World\n* @see Transaction\n* @see Activity\n*/"
+}

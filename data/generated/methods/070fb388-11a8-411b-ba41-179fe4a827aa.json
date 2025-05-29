@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.world.train.TrainPositionOnMapTest",
+    "methodName": "testCreateInOppositeDirectionToPath"
+  },
+  "javaDoc": "/**\n* Tests that reversing a TrainPositionOnMap created with createInSameDirectionAsPath\n* results in the expected coordinates when the path is defined with specific points.\n*/"
+}

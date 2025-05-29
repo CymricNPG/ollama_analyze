@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.client.top.SimpleTileRenderer",
+    "methodName": "renderTile"
+  },
+  "javaDoc": "/**\n* Renders a tile at the specified screen coordinates using the given world coordinates.\n*\n* @param g The Graphics object used for rendering.\n* @param renderX The x-coordinate on the screen where the tile is rendered.\n* @param renderY The y-coordinate on the screen where the tile is rendered.\n* @param mapX The x-coordinate in the world map corresponding to the tile.\n* @param mapY The y-Coordinate in the world map corresponding to the tile.\n* @param w The ReadOnlyWorld instance providing tile data or image information.\n*/"
+}

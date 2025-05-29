@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.world.track.FreerailsTile",
+    "methodName": "getTerrainTypeID"
+  },
+  "javaDoc": "/**\n* Returns the terrain type ID of this tile.\n* The terrain type ID is an integer that represents the type of terrain\n* present on this tile in the game world.\n*\n* @return the terrain type ID as an integer\n*/"
+}

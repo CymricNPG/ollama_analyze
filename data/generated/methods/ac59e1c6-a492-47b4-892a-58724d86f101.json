@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.move.ChangeTileMove",
+    "methodName": "getUpdatedTiles"
+  },
+  "javaDoc": "/**\n* Returns the rectangle representing the single tile that has been updated by this move.\n*\n* @return the Rectangle object representing the updated tile's position and size (1x1).\n*/"
+}

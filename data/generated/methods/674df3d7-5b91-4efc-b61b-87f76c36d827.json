@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.network.specifics.FreerailsGameServer",
+    "methodName": "logoff"
+  },
+  "javaDoc": "/**\n* Logs off a player by removing their NameAndPassword entry from the currently logged-on collection.\n*\n* @param player the index of the player in the players list to be logged off\n* @throws IndexOutOfBoundsException if the player index is out of bounds\n*/"
+}

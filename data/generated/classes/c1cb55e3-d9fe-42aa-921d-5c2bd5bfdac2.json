@@ -1,0 +1,4 @@
+{
+  "className": "jfreerails.world.train.SpeedAgainstTime",
+  "javaDoc": "/**\n* Represents a model of distance traveled over time, providing methods to calculate\n* distance from time, time from distance, and derived quantities such as velocity and\n* acceleration. This interface defines the contract for objects that represent the\n* relationship between time and distance, ensuring valid input ranges and throwing\n* exceptions for invalid parameters.\n*\n* @see FreerailsSerializable\n*/"
+}

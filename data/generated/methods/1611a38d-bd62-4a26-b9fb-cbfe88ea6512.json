@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.world.accounts.DeliverCargoReceipt",
+    "methodName": "getTrainId"
+  },
+  "javaDoc": "/**\n* Returns the ID of the train associated with this cargo receipt.\n*\n* @return the train ID as an integer.\n*/"
+}

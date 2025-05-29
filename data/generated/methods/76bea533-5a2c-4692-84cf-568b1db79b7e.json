@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.world.train.TrainModel",
+    "methodName": "TrainModel"
+  },
+  "javaDoc": "/**\n* Constructs a new TrainModel with the specified wagon types and cargo bundle ID.\n*\n* @param wagons      A map representing the types of wagons in the train.\n* @param BundleId    The identifier for the cargo bundle associated with this train.\n*\n* @throws IllegalArgumentException if the wagons parameter is null or invalid.\n*/"
+}

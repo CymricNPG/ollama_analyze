@@ -1,0 +1,4 @@
+{
+  "className": "jfreerails.util.List3DDiff",
+  "javaDoc": "/**\n* Represents a 3-dimensional list diff, providing a delta view of changes to a 3D list structure.\n* This class delegates operations to its superclass {@link ListXDDiffs} while exposing the underlying\n* 3D list via {@link #getUnderlyingList()}. It supports dimension manipulation, element access,\n* and size queries for multi-dimensional indexing.\n*\n* @author [Author Name]\n* @see ListXDDiffs\n* @see List3D\n* @see Lists\n*/"
+}

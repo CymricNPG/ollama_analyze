@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.client.top.GUIComponentFactoryImpl",
+    "methodName": "createBuildMenu"
+  },
+  "javaDoc": "/**\n* Creates and returns the \"Build\" menu used in the GUI for building operations.\n*\n* @return the JMenu instance representing the Build menu\n*/"
+}

@@ -1,0 +1,4 @@
+{
+  "className": "jfreerails.world.cargo.CargoBundleTest",
+  "javaDoc": "/**\n* Test class for verifying the equality logic of the MutableCargoBundle and its Immutable counterpart.\n* This class ensures that the equals method behaves correctly under various scenarios, including different cargo batches, quantities, and conversions to immutable versions.\n*\n* @author YourName\n* @since 1.0\n*\n* @see MutableCargoBundle\n* @see ImmutableCargoBundle\n* @see CargoBatch\n*/"
+}

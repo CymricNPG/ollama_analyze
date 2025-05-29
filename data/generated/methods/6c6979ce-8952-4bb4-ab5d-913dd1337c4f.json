@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.client.top.GUIComponentFactoryImpl",
+    "methodName": "itemAdded"
+  },
+  "javaDoc": "/**\n* Handles the addition of an item, updating the count of trains or stations\n* based on the provided key and principal. This method is invoked when an item\n* is added to the model, and it triggers the corresponding count method\n* (countTrains() or countStations()) if the key matches and the principal\n* matches the model's principal.\n*\n* @param key       The type of item being added (e.g., TRAINS or STATIONS).\n* @param index     The index at which the item was added.\n* @param principal The principal associated with the item addition.\n*/"
+}

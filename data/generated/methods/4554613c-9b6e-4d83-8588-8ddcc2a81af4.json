@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.world.terrain.TerrainType",
+    "methodName": "getDisplayName"
+  },
+  "javaDoc": "/**\n* Returns the display name of this terrain type, which is used for user interface purposes or identification.\n*\n* @return the human-readable name of the terrain type\n*/"
+}

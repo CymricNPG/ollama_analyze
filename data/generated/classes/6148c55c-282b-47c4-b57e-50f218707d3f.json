@@ -1,0 +1,4 @@
+{
+  "className": "jfreerails.client.renderer.SquareTileBackgroundRendererTest",
+  "javaDoc": "/**\n* Test class for verifying the behavior of SquareTileBackgroundRenderer\n* when refresh operations are performed before the buffer is initialized.\n* This test case reproduces bug [1303162] where an unexpected exception occurs\n* due to premature refresh calls.\n*\n* @author John Doe\n* @since 1.0\n*\n* @see SquareTileBackgroundRenderer\n* @see MapLayerRenderer\n*/"
+}

@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.controller.MyDisplayMode",
+    "methodName": "equals"
+  },
+  "javaDoc": "/**\n* Compares this MyDisplayMode instance with the specified object for equality.\n* The comparison is based on the displayMode field.\n*\n* @param o the object to compare with\n* @return true if the objects are equal, false otherwise\n*/"
+}

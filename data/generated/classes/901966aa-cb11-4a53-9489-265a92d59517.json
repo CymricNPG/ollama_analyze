@@ -1,0 +1,4 @@
+{
+  "className": "jfreerails.util.Pair",
+  "javaDoc": "/**\n* A generic class representing a pair of two elements of types A and B.\n* This class provides methods to access the elements, check equality, and generate a string representation.\n*\n* @see java.util.Objects for equality checks\n*/"
+}

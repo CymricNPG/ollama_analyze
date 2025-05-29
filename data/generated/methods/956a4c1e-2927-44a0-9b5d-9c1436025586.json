@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.controller.FlatTrackExplorer",
+    "methodName": "setPosition"
+  },
+  "javaDoc": "/**\n* Sets the current position on the track based on the provided integer value.\n* This method updates the internal position state and resets the {@code beforeFirst} flag to {@code true},\n* indicating the start of a new position tracking sequence.\n*\n* @param i the integer value representing the track position to set\n*/"
+}

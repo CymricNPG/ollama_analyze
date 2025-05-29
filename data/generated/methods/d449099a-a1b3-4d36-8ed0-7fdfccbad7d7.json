@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.controller.MoveTrainPreMove1stTest",
+    "methodName": "setupWorld"
+  },
+  "javaDoc": "/**\n* Sets up the test world by initializing the map, building tracks and stations,\n* configuring train orders, and preparing a pre-move action for a train.\n* This method creates a terminal station at position (10,10), another station at (19,10),\n* and configures a train with specific orders. It also verifies that all operations succeed.\n*\n* @throws Exception If any step in the setup fails, though assertions ensure success.\n*/"
+}

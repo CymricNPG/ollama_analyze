@@ -1,0 +1,4 @@
+{
+  "className": "jfreerails.util.List3D",
+  "javaDoc": "/**\n* A 3D list interface that provides methods for managing and accessing elements in three dimensions.\n* This interface extends {@link java.io.Serializable} to support serialization of 3D list instances.\n* It includes operations for retrieving sizes, accessing elements, and modifying the structure along each dimension.\n*\n* @see java.io.Serializable\n*/"
+}

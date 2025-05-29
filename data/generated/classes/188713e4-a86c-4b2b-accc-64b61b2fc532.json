@@ -1,0 +1,4 @@
+{
+  "className": "jfreerails.server.SavedGamesManagerImpl",
+  "javaDoc": "/**\n* Manages saved games, providing methods to retrieve game names, save game states, load game states, and create new maps.\n*\n* @see SavedGamesManager\n* @see NewGameMessage2Server\n* @see SavFileFilter\n* @see ServerControl\n* @see OldWorldImpl\n* @see FreerailsProgressMonitor\n*/"
+}

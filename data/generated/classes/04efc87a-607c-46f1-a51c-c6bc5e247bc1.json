@@ -1,0 +1,4 @@
+{
+  "className": "jfreerails.util.List1DDiff",
+  "javaDoc": "/**\n* <strong>List1DDiff</strong> provides a 1-dimensional list diff view, allowing modification of an underlying list while tracking changes.\n* This class delegates most operations to the superclass {@link ListXDDiffs} but overrides methods to ensure 1D indexing and behavior.\n* It wraps an underlying {@link List1D} instance, exposing its elements through diff-aware access.\n*\n* @author YourName\n* @since 1.0\n* @see ListXDDiffs\n* @see List1D\n*/"
+}

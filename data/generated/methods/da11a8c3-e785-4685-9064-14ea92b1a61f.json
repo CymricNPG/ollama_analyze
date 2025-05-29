@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.controller.GraphExplorer",
+    "methodName": "getH"
+  },
+  "javaDoc": "/**\n* Returns the value of H associated with the current node or element in the graph exploration.\n* The 'H' value represents a specific attribute or metric used during graph traversal or analysis.\n*\n* @return the integer value of H\n*/"
+}

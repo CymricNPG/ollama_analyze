@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.move.ChangeTrainScheduleMove",
+    "methodName": "ChangeTrainScheduleMove"
+  },
+  "javaDoc": "/**\n* Constructs a new {@code ChangeTrainScheduleMove} instance representing a change\n* to a train schedule. This move encapsulates the transition from a previous\n* schedule state to a new schedule state for a specific train.\n*\n* @param id the unique identifier of the train associated with the schedule\n* @param before the immutable schedule state before the change\n* @param after the immutable schedule state after the change\n* @param p the principal (user or entity) initiating the schedule change\n*/"
+}

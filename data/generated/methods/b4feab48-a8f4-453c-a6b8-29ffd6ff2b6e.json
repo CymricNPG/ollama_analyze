@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.client.view.IncomeStatementGeneratorTest",
+    "methodName": "addTrans"
+  },
+  "javaDoc": "/**\n* Adds a transaction for a cargo type with the specified category.\n* Iterates through all cargo types in the world, checks if their category\n* matches the given category. If a match is found, creates a CargoBatch\n* and adds a transaction using the specified amount and other parameters.\n* If no matching category is found, throws an IllegalArgumentException.\n*\n* @param category  The category of the cargo type to which the transaction applies.\n* @param amount    The monetary amount of the transaction.\n* @throws IllegalArgumentException if no cargo type matches the specified category.\n*/"
+}

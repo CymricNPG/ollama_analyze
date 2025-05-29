@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.controller.DropOffAndPickupCargoMoveGeneratorTest",
+    "methodName": "suite"
+  },
+  "javaDoc": "/**\n* Constructs and returns a JUnit test suite for the\n* {@link DropOffAndPickupCargoMoveGeneratorTest} class.\n*\n* @return A TestSuite instance containing all test cases for this class.\n*/"
+}

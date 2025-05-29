@@ -1,0 +1,4 @@
+{
+  "className": "jfreerails.world.accounts.TransactionAndTimeStamp",
+  "javaDoc": "/**\n* Represents a pair of a transaction and a timestamp, used to track when a transaction occurred in a game context.\n* This class encapsulates a {@link Transaction} object and a {@link GameTime} object, providing immutable access to both.\n* It implements {@link FreerailsSerializable} to support serialization for saving game states or transmitting data.\n*\n* @see Transaction\n* @see GameTime\n* @see FreerailsSerializable\n*/"
+}

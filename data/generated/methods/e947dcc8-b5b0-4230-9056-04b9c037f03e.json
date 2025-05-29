@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.world.train.ImmutableSchedule",
+    "methodName": "getStationToGoto"
+  },
+  "javaDoc": "/**\n* Returns the station ID that the train is ordered to go to.\n* Returns -1 if there is no such order.\n*\n* @return the station ID of the order to go to, or -1 if no such order exists\n*/"
+}

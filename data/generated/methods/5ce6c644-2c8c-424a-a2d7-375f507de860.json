@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.world.top.NonNullElementsTest",
+    "methodName": "testGotoIndex"
+  },
+  "javaDoc": "/**\n* Tests the {@link WorldIterator#gotoIndex(int)} method to ensure it correctly\n* navigates to the specified index, updates the row ID, and throws\n* {@link NoSuchElementException} for invalid indices.\n*/"
+}

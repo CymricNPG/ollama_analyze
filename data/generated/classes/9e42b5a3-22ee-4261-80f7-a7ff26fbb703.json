@@ -1,0 +1,4 @@
+{
+  "className": "jfreerails.world.train.MutableScheduleTest",
+  "javaDoc": "/**\n* Test class for the MutableSchedule class, verifying its behavior when adding TrainOrdersModel instances\n* and retrieving the station to go to. This test ensures the correctness of the getStationToGoto method\n* after order additions.\n*\n* @author John Doe\n* @see TrainOrdersModel\n* @see MutableSchedule\n*/"
+}

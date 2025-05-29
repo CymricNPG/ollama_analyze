@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.client.renderer.ZoomedOutMapRenderer",
+    "methodName": "getScale"
+  },
+  "javaDoc": "/**\n* Returns the scale factor as a float, calculated by dividing the image height\n* by the map height. This scale factor represents the zoom level applied to\n* the map rendering.\n*\n* @return the scale factor as a float value\n*/"
+}

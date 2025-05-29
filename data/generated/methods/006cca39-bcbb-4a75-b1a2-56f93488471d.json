@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.client.view.DialogueBoxController",
+    "methodName": "showTerrainInfo"
+  },
+  "javaDoc": "/**\n* Updates the terrain information with the specified terrain type and displays the content.\n*\n* @param terrainType  The type of terrain to be displayed, represented as an integer.\n* @see jfreerails.client.view.TerrainInfoJPanel#setTerrainType(int)\n* @see jfreerails.client.view.DialogueBoxController#showContent(Object)\n*/"
+}

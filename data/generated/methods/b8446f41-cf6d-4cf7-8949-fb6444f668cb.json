@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.client.renderer.TerrainLayer",
+    "methodName": "refreshTile"
+  },
+  "javaDoc": "/**\n* Refreshes the tile located at the specified coordinates (x, y).\n* This method updates the tile's state or appearance to reflect any changes.\n*\n* @param x the x-coordinate of the tile to refresh\n* @param y the y-coordinate of the tile to refresh\n*/"
+}

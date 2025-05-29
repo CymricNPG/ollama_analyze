@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.world.common.ImList",
+    "methodName": "checkForNulls"
+  },
+  "javaDoc": "/**\n* Checks each element in the internal array for null values.\n* If any element is found to be null, a NullPointerException is thrown.\n*\n* @throws NullPointerException if any element in the array is null.\n*/"
+}

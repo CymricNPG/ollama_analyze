@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.move.WorldDiffsMoveTest",
+    "methodName": "testChangingElementInList2"
+  },
+  "javaDoc": "/**\n* Tests changing elements in a list by adding two cities to the world's STATIONS list,\n* then modifying the diffs to change those entries to city2. Verifies that the diffs\n* count is 2 and that the generated WorldDiffMove also has two diffs.\n*/"
+}

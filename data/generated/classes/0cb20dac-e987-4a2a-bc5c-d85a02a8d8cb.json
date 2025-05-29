@@ -1,0 +1,4 @@
+{
+  "className": "jfreerails.controller.TrackBuildingTest",
+  "javaDoc": "/**\n* <p>\n* This test class verifies the functionality of building tracks in a rail simulation environment.\n* It includes various test cases to ensure that track construction works correctly under different scenarios,\n* including straight lines, single track pieces, terminal handling, double track extensions, and sharp curves.\n* </p>\n*\n* <p>\n* The class tests the interaction between the TrackPathFinder, TrackMoveProducer, and BuildTrackStrategy\n* to ensure proper pathfinding and track construction logic. It also validates edge cases such as terminal\n* interference and double track routing.\n* </p>\n*\n* @author John Doe\n* @since 1.0\n* @see TrackPathFinder\n* @see TrackMoveProducer\n* @see BuildTrackStrategy\n* @see StationBuilder\n*/"
+}

@@ -1,0 +1,4 @@
+{
+  "className": "jfreerails.util.List2DDiff",
+  "javaDoc": "/**\n* Represents a two-dimensional list that tracks differences (diffs) between its current state and an underlying list.\n* This class provides methods to manipulate and inspect the list while delegating operations to the superclass for diff tracking.\n* It wraps a {@link List2D} instance and exposes its structure through diff-aware methods.\n*\n* @author Generated Documentation\n* @see ListXDDiffs\n* @see List2D\n* @see Lists\n*/"
+}

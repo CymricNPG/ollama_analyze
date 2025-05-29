@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.world.top.World",
+    "methodName": "removeLastActivity"
+  },
+  "javaDoc": "/**\n* Removes the activity at the specified index from the list of activities\n* associated with the given principal and returns the removed activity.\n*\n* @param principal the FreerailsPrincipal representing the user performing the action\n* @param index the index of the activity to remove\n* @return the Activity that was removed\n*/"
+}

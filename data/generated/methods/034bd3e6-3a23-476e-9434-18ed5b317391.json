@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.world.top.WorldImpl",
+    "methodName": "setTime"
+  },
+  "javaDoc": "/**\n* Sets the current time for the world.\n*\n* @param t the new GameTime value to set as the current time\n*/"
+}

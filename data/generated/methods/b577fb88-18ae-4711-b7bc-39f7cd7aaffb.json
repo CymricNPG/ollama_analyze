@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.launcher.GUIClient",
+    "methodName": "start"
+  },
+  "javaDoc": "/**\n* Initializes and starts the game by setting up the server, connecting to it,\n* creating a new game, and launching the game loop.\n*\n* This method performs the following steps:\n* 1. Sets up the game world and initializes the saved games manager.\n* 2. Creates and configures the FreerailsGameServer with the game model.\n* 3. Connects to the server using the provided name and password.\n* 4. Starts a new game with the selected map.\n* 5. Waits for the world to be initialized and updates the game state.\n* 6. Launches the game loop in a separate thread to handle ongoing updates.\n*/"
+}

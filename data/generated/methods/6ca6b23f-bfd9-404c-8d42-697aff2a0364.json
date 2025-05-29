@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.server.parser.CargoAndTerrainHandlerImpl",
+    "methodName": "start_Types"
+  },
+  "javaDoc": "/**\n* This method is called when the XML parser encounters the start of the &lt;Types&gt; element.\n* It is part of the process for parsing cargo and terrain types defined in the XML configuration.\n* No action is required here as the actual processing of type definitions is handled by subsequent methods.\n*\n* @param meta The attributes of the &lt;Types&gt; XML element, which may contain metadata about the types.\n* @throws SAXException If an error occurs during XML parsing while processing the &lt;Types&gt; element.\n*\n* @see CargoAndTerrainHandler\n* @see CargoAndTerrainParser\n*/"
+}

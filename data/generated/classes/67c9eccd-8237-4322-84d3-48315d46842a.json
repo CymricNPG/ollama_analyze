@@ -1,0 +1,4 @@
+{
+  "className": "jfreerails.controller.Map",
+  "javaDoc": "/**\n* Represents a graph structure for pathfinding, specifically designed for use with A* algorithms.\n* This class provides methods to navigate through nodes and edges, allowing traversal and cost evaluation.\n*\n* @author Your Name\n* @see GraphExplorer\n* @see Node\n*/"
+}

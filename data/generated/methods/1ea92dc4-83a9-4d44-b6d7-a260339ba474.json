@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.network.specifics.LogOnRequest",
+    "methodName": "getUsername"
+  },
+  "javaDoc": "/** Returns the username associated with this log-on request. @return the username */"
+}

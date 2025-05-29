@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.client.view.IncomeStatementGeneratorTest",
+    "methodName": "testCalExpense"
+  },
+  "javaDoc": "/**\n* Tests the {@code calRevenue} method of the balance sheet generator to ensure\n* it correctly calculates revenue based on the specified category.\n* <p>\n* This test performs the following steps:\n* 1. Verifies that the initial revenue for the \"Mail\" category is zero.\n* 2. Adds two transactions: one for the \"Mail\" category and another for \"Passengers\".\n* 3. Confirms that the revenue for the \"Mail\" category matches the expected amount\n*    after the transactions are processed.\n*\n* @param balanceSheetGenerator The instance of the balance sheet generator\n*                               under test.\n* @param w The world context used to retrieve cargo type information.\n*/"
+}

@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.network.specifics.SimpleServerGameModel",
+    "methodName": "listUpdated"
+  },
+  "javaDoc": "/**\n* Notifies that a list has been updated, providing details about the change.\n* This method is called when a list item is modified, specifying the key of the\n* updated item, its index in the list, and the principal (user context) associated\n* with the update. The principal is used to validate access or determine user-specific\n* behavior.\n*\n* @param key       The unique identifier of the list item that was updated.\n* @param index     The position of the updated item within the list.\n* @param principal The user principal associated with the update, used for access control.\n*/"
+}

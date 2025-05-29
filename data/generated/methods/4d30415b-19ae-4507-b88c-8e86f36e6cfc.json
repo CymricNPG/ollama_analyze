@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.server.CitySAXParser",
+    "methodName": "CitySAXParser"
+  },
+  "javaDoc": "/**\n* Initializes a new CitySAXParser with the specified world instance.\n*\n* @param w the World instance to be associated with this parser\n* @throws SAXException if an error occurs during parsing initialization\n*/"
+}

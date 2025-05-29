@@ -1,0 +1,4 @@
+{
+  "className": "jfreerails.util.List3DImpl",
+  "javaDoc": "/**\n* A 3D list implementation that manages elements in three dimensions.\n* This class provides methods to add, remove, and access elements in a 3D structure.\n*\n* @author Your Name\n* @since 1.0\n* @see List3D\n*/"
+}

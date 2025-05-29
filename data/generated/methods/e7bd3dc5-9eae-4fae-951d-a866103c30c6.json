@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.move.ChangeTrainMove",
+    "methodName": "ChangeTrainMove"
+  },
+  "javaDoc": "/**\n* Constructs a new ChangeTrainMove instance to represent a change in the list of trains.\n* This move records the modification of a train at the specified index, replacing the previous state\n* with the new state.\n*\n* @param index the index of the train in the list that is being modified\n* @param before the FreerailsSerializable object representing the state of the train before the change\n* @param after the FreerailsSerializable object representing the state of the train after the change\n* @param p the FreerailsPrincipal associated with the user performing the change\n*/"
+}

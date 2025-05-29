@@ -119,7 +119,7 @@ class LLMAccessLayer:
                 
                 if stop_sequences:
                     options['stop'] = stop_sequences
-                
+                # self.logger.debug(f"Prompt: {prompt}")
                 response = self.client.generate(
                     model=model_name,
                     prompt=prompt,

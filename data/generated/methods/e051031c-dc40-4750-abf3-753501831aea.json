@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.controller.FinancialDataGatherer",
+    "methodName": "bondInterestRates"
+  },
+  "javaDoc": "/**\n* Retrieves an array of bond interest rates.\n* <p>\n* This method is intended to gather bond interest rate data. The returned array\n* contains interest rates for various bonds or time periods. The current\n* implementation returns null as a placeholder; the actual implementation\n* should populate and return the data.\n*\n* @return an array of integers representing bond interest rates, or null if\n*         data is not yet available.\n*/"
+}

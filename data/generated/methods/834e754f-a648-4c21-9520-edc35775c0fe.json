@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.controller.TimeTickPreMove",
+    "methodName": "TimeTickPreMove"
+  },
+  "javaDoc": "/**\n* Private constructor to prevent instantiation from outside the class.\n* This class is intended to be used internally and not instantiated directly.\n*/"
+}

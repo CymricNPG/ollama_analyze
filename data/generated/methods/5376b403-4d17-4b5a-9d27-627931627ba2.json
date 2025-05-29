@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.move.WorldDiffMove",
+    "methodName": "WorldDiffMove"
+  },
+  "javaDoc": "/**\n* Constructs a {@code WorldDiffMove} by processing differences between the current world state\n* and the provided {@code WorldDiffs}, generating a sequence of moves representing the changes.\n*\n* @param world the current world state used to retrieve old values before changes\n* @param worldDiffs the {@code WorldDiffs} object containing the differences to apply\n* @param cause the cause of this move, used for tracking or logging purposes\n*\n* @throws UnsupportedOperationException if a change requires reducing the size of a list or transaction collection,\n*         which is not supported in this context\n*/"
+}

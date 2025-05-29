@@ -1,0 +1,4 @@
+{
+  "className": "jfreerails.world.top.ItemsTransactionAggregatorTest",
+  "javaDoc": "/**\n* Tests the ItemsTransactionAggregator class to ensure it correctly calculates the quantity\n* of items based on added transactions.\n*\n* This test verifies that the aggregator returns the correct quantity after adding various\n* AddItemTransaction instances, confirming its functionality.\n*\n* @see ItemsTransactionAggregator\n* @see AddItemTransaction\n* @see World\n* @see Player\n* @see FreerailsPrincipal\n*/"
+}

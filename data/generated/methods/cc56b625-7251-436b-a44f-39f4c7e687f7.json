@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.controller.TrackPathFinder",
+    "methodName": "getStatus"
+  },
+  "javaDoc": "/**\n* Returns the current status of the path finding algorithm.\n* This method delegates the request to the underlying\n* {@link jfreerails.controller.SimpleAStarPathFinder} instance\n* to retrieve the status of the path finding operation.\n*\n* @return an integer representing the current status of the path finder.\n*/"
+}

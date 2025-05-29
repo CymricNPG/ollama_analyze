@@ -1,0 +1,4 @@
+{
+  "className": "jfreerails.world.track.TrackPieceImplTest",
+  "javaDoc": "/**\n* Test class for the TrackPieceImpl class, focusing on the equals method.\n* This test verifies the correctness of the equals method by comparing instances\n* with different configurations, rules, and cloned objects.\n*\n* @see TrackConfiguration\n* @see TrackRule\n* @see World\n* @see Utils\n*/"
+}

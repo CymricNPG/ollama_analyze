@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.controller.FlatTrackExplorerTest",
+    "methodName": "setUp"
+  },
+  "javaDoc": "/**\n* Sets up the test environment by initializing a world, adding a test player,\n* configuring game rules to no restrictions, generating track rule lists,\n* and creating/validating track piece construction moves.\n*\n* This method initializes a {@link jfreerails.world.top.WorldImpl} instance,\n* adds a test player, sets game rules to {@link ITEM.GAME_RULES} with\n* {@link GameRules.NO_RESTRICTIONS}, generates track rules via\n* {@link MapFixtureFactory.generateTrackRuleList}, and constructs\n* multiple {@link ChangeTrackPieceCompositeMove} instances to build track\n* pieces. Each move is executed and verified to ensure success.\n*\n* @param none\n* @return void\n* @throws none\n*/"
+}

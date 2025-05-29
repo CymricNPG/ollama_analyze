@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.client.top.UserInputOnMapController",
+    "methodName": "getCursorPosition"
+  },
+  "javaDoc": "/**\n* Retrieves the current cursor position from the model.\n* This method fetches the {@code CURSOR_POSITION} property from the model root,\n* returning it as an {@code ImPoint}. If the property is {@code null}, a default\n* {@code ImPoint} instance is returned instead.\n*\n* @return the cursor position as an {@code ImPoint}, or a default instance if the property is null\n*/"
+}

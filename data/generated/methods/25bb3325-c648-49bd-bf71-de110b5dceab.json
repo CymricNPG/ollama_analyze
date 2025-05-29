@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.world.accounts.Bill",
+    "methodName": "Bill"
+  },
+  "javaDoc": "/**\n* Constructs a new Bill with the specified amount and category.\n* The amount is stored as a negative value to represent debt.\n*\n* @param amount the monetary amount of the bill, which will be stored as negative\n* @param category the category used to classify this bill\n*/"
+}

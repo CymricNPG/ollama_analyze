@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.client.view.SelectWagonsJPanel",
+    "methodName": "setup"
+  },
+  "javaDoc": "/**\n* Initializes the UI components of the SelectWagonsJPanel by configuring\n* the wagon types list model, cell renderer, and OK button action listener.\n*\n* @param mr The ModelRoot instance providing access to the world data.\n* @param vl The RenderersRoot instance used for rendering wagon details.\n* @param closeAction The Action to trigger when the OK button is clicked.\n*/"
+}

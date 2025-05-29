@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.world.top.WorldImpl",
+    "methodName": "removeLast"
+  },
+  "javaDoc": "/**\n* Removes the last element from the 3D list associated with the specified player and key.\n*\n* @param p the {@code FreerailsPrincipal} representing the player, used to determine the player index\n* @param key the {@code KEY} object specifying the key identifier, used to retrieve the key ID\n* @return the {@code FreerailsSerializable} object that was removed from the 3D list\n*/"
+}

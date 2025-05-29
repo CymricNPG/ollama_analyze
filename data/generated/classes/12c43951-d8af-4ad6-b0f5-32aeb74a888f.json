@@ -1,0 +1,4 @@
+{
+  "className": "jfreerails.controller.ReportBugTextGenerator",
+  "javaDoc": "/**\n* Generates text for bug reports, including instructions and exception details.\n* This class provides methods to generate bug report text for both general and exception scenarios.\n* It also handles unexpected exceptions by displaying an error form and exiting the application.\n*\n* @see UnexpectedExceptionForm\n* @see ScreenHandler\n*/"
+}

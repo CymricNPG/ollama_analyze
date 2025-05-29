@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.client.renderer.SpecialTileRenderer",
+    "methodName": "dumpImages"
+  },
+  "javaDoc": "/**\n* Sets the image for this tile renderer using the generated filename and the first tile icon.\n* This method delegates to {@link ImageManager#setImage(String, java.awt.Image)} to associate\n* the generated filename with the tile's primary icon.\n*\n* @param imageManager The image manager responsible for handling image resources.\n*\n* @see #generateFilename()\n* @see #getTileIcons()\n*/"
+}

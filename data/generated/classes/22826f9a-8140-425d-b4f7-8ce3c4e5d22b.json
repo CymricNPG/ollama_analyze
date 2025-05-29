@@ -1,0 +1,4 @@
+{
+  "className": "jfreerails.world.common.ImHashSet",
+  "javaDoc": "/**\n* <p>\n* ImHashSet is an immutable wrapper class for a {@link HashSet} that ensures\n* the contents cannot be modified after creation. It provides immutability\n* guarantees and implements the {@link FreerailsSerializable} interface for\n* serialization support.\n* </p>\n* <p>\n* This class delegates all operations to an internal {@link HashSet} instance\n* but enforces immutability by making all modifications (such as adding or\n* removing elements) unsupported. The iterator returned by {@link #iterator()}\n* does not allow removal of elements.\n* </p>\n*\n* @since 1.0\n* @see HashSet\n* @see FreerailsSerializable\n* @see java.util.Iterator\n* @see java.util.Set\n*/"
+}

@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.world.station.StationModel",
+    "methodName": "getSupply"
+  },
+  "javaDoc": "/**\n* Returns the SupplyAtStation object representing the supply associated with this station.\n*\n* @return the SupplyAtStation instance associated with the station.\n*/"
+}

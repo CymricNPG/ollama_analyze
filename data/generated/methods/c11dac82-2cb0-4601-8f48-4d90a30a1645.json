@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.client.view.BuildTrackJPanel",
+    "methodName": "addTrackActionPerformed"
+  },
+  "javaDoc": "/**\n* Handles the action event triggered when the \"Add Track\" button is clicked.\n* This method updates the UI visibility settings, cancels any ongoing station placement,\n* and switches the track builder mode to {@code BUILD_TRACK}.\n*\n* @param evt The {@code ActionEvent} triggered by the user's interaction with the \"Add Track\" button.\n*/"
+}

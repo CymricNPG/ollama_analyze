@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.controller.AddTrainPreMoveTest",
+    "methodName": "testGetSchedule"
+  },
+  "javaDoc": "/**\n* Tests the {@link AddTrainPreMove} class's ability to generate and execute a move\n* that successfully creates a train target. This test verifies that the move sequence\n* correctly initializes a train using the provided track path and schedule.\n*\n* The test sets up a world, constructs a move executor, builds a track path,\n* generates a move via {@link AddTrainPreMove#generateMove}, and executes it.\n* It then asserts that the resulting train target is not null.\n*\n* @throws IllegalStateException if any step in the move execution fails,\n*         indicating an invalid move or setup.\n*/"
+}

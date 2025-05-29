@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.controller.Map",
+    "methodName": "setPosition"
+  },
+  "javaDoc": "/**\n* Sets the position of the map to the specified integer value and resets the branch to -1.\n*\n* @param i the new position value to set\n*/"
+}

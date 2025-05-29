@@ -1,0 +1,4 @@
+{
+  "className": "jfreerails.move.ChangeTileMoveTest",
+  "javaDoc": "/**\n* Tests the functionality of the ChangeTileMove class, ensuring it correctly modifies terrain tiles\n* and survives serialization. This class validates that the move operation changes the terrain type\n* of a specified tile and verifies the move's success status. It also checks serialization resilience\n* of the ChangeTileMove instance.\n*\n* @author John Doe\n* @since 1.0\n* @see ChangeTileMove\n* @see AbstractMoveTestCase\n* @see MapFixtureFactory2\n* @see Point\n*/"
+}

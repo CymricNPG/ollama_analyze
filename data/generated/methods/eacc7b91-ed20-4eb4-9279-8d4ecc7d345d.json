@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.controller.PathOnTrackFinderTest",
+    "methodName": "testPathAsVectors2"
+  },
+  "javaDoc": "/**\n* Tests the pathAsVectors method to ensure it returns the correct path when a valid path is found.\n* This test sets up a predefined path, calculates the end point, builds the track, and verifies\n* that the search finds the path and the returned vectors match the expected steps.\n*/"
+}

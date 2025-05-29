@@ -1,0 +1,4 @@
+{
+  "className": "jfreerails.move.NextActivityMoveTest",
+  "javaDoc": "/**\n* Test class for verifying the behavior of the {@link NextActivityMove} class.\n* This class contains test cases to ensure that the move operation correctly handles\n* serialization, undo/redo functionality, and activity stacking within a world.\n*\n* @author Your Name\n* @see AbstractMoveTestCase\n* @see NextActivityMove\n* @see World\n* @see FreerailsPrincipal\n* @see Activity\n*/"
+}

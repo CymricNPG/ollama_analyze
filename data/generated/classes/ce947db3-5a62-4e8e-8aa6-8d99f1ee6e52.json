@@ -1,0 +1,4 @@
+{
+  "className": "jfreerails.world.train.TrainMotionTest",
+  "javaDoc": "/**\n* Test class for verifying the correctness of the TrainMotion class's motion calculations.\n* This test focuses on validating the total distance, duration, initial position, and state\n* handling of a train's motion under specific acceleration scenarios. The test data is derived\n* from debugger outputs to ensure accuracy.\n*\n* @see TrainMotion\n* @see CompositeSpeedAgainstTime\n*\n* @since 1.0\n*/"
+}

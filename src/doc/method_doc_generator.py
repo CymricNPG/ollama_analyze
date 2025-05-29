@@ -25,7 +25,7 @@ from .doc_common import BaseDocumentationGenerator
 
 class MethodDocumentationGenerator(BaseDocumentationGenerator):
     """Generates missing JavaDoc documentation for Java methods."""
-    
+
     def __init__(self, llm_config: Optional[LLMConfig] = None, output_dir: str = "generated/methods"):
         """
         Initialize the method documentation generator.
@@ -35,7 +35,7 @@ class MethodDocumentationGenerator(BaseDocumentationGenerator):
             output_dir: Directory to save generated documentation files
         """
         super().__init__(llm_config, output_dir)
-    
+
     def generate_documentation(self, java_data: JavaCodeData) -> List[JavaUpdateMethod]:
         """
         Generate missing documentation for methods.
@@ -47,31 +47,31 @@ class MethodDocumentationGenerator(BaseDocumentationGenerator):
             List of methods that had documentation generated
         """
         self.logger.info("Starting method documentation generation")
-        
+
         if not self.is_ready():
             self.logger.error("Method documentation generator is not ready")
             raise RuntimeError("Method documentation generator not ready")
 
-        methods_without_docs = [method for method in java_data.methods if not method.java_doc]
+        methods_without_docs = [method for method in java_data.methods if not method.java_doc and self.is_valid_method(method)]
 
         self.logger.info(f"Found {len(methods_without_docs)} methods without documentation")
-        
+
         generated_methods = []
-        
+
         for i, method in enumerate(methods_without_docs, 1):
             self.logger.info(
                 f"Processing method {i}/{len(methods_without_docs)}: "
                 f"{method.src}"
             )
-            
+
             # Create context for the method
             context = self._create_method_context(method, java_data)
-            
+
             # Generate documentation
             documentation = self.javadoc_generator.generate_method_documentation(
                 method.code, context
             )
-            
+
             if documentation:
                 new_method = JavaUpdateMethod(src=method.src, java_doc=documentation)
                 self.logger.debug(f"Generated docs for {method.src}")
@@ -82,9 +82,9 @@ class MethodDocumentationGenerator(BaseDocumentationGenerator):
                 self.logger.warning(f"Failed to generate docs for {method.src}")
 
         self.logger.info(f"Generated files saved to: {self.output_dir}")
-        
+
         return generated_methods
-    
+
     def _create_method_context(self, method: JavaMethod, java_data: JavaCodeData) -> str:
         """
         Create context information for a method.
@@ -97,15 +97,15 @@ class MethodDocumentationGenerator(BaseDocumentationGenerator):
             Context string for the method
         """
         context_parts = []
-        
+
         # Add class information
         parent_class = java_data.get_class_by_name(method.src.class_name)
         if parent_class and parent_class.java_doc:
             context_parts.append(f"Parent class: {method.src.class_name}")
             # Extract first line of class doc for context
-            class_doc_first_line = parent_class.java_doc.split('\n')[0].strip('/* ')
+            class_doc_first_line = parent_class.java_doc[:256].replace("\n"," ").replace("*","")
             context_parts.append(f"Class purpose: {class_doc_first_line}")
-        
+
         # Add dependency information
         if method.dst_methods:
             deps = [f"{dep}" for dep in method.dst_methods]
@@ -113,3 +113,15 @@ class MethodDocumentationGenerator(BaseDocumentationGenerator):
 
         return ". ".join(context_parts) if context_parts else ""
 
+    def is_valid_method(self, method: JavaMethod) -> bool:
+        if self.get_class_name_from_qualified_name(method.src.class_name) == method.src.method_name:
+            # constructor
+            return False
+        invalid_method_names = ["equals", "hashCode", "toString", "clone", "finalize", "wait", "notify", "notifyAll"]
+        if method.src.method_name in invalid_method_names:
+            return False
+        return True
+
+    def get_class_name_from_qualified_name(self, qualified_name: str) -> str:
+        """Extract class name from fully qualified name."""
+        return qualified_name.split('.')[-1]

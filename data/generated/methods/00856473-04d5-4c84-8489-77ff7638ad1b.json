@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "experimental.TrackRenderer",
+    "methodName": "controlPoint"
+  },
+  "javaDoc": "/**\n* Calculates a control point based on the given source point.\n* The new point is computed by applying a weight of 0.3 to the source coordinates\n* and adjusting them relative to the tile width. This transformation is used\n* to position control points for rendering purposes.\n*\n* @param from The source point used to compute the control point.\n* @return A new Point2D.Double representing the transformed control point.\n*/"
+}

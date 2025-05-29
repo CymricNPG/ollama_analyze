@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.network.specifics.LogOnRequest",
+    "methodName": "equals"
+  },
+  "javaDoc": "/**\n* Overrides the equals method to compare LogOnRequest objects based on their username and password fields.\n* Two LogOnRequest instances are considered equal if they have the same username and password values,\n* with proper handling of null values.\n*\n* @param o the object to compare with this LogOnRequest instance\n* @return true if the objects are equal, false otherwise\n*/"
+}

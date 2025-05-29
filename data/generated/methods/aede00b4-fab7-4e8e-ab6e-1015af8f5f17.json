@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.client.view.ServerControlModel",
+    "methodName": "setup"
+  },
+  "javaDoc": "/**\n* Initializes the instance by setting the root model and dialogue box controller,\n* then registers this object as a property change listener for the model root.\n*\n* @param modelRoot The root model to which the listener is added.\n* @param dbc The controller responsible for managing dialogue box interactions.\n*/"
+}

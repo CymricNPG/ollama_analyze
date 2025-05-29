@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.client.renderer.BlankMapRenderer",
+    "methodName": "paintTile"
+  },
+  "javaDoc": "/**\n* Paints a single tile at the specified tile coordinates using the provided graphics context.\n* This method delegates the painting operation to {@link #paintRect(Graphics, java.awt.Shape)}\n* by passing {@code null} as the shape parameter, which likely results in default rendering behavior.\n*\n* @param g      the graphics context used for rendering\n* @param tileX  the x-coordinate of the tile to paint\n* @param tileY  the y-coordinate of the tile to paint\n*/"
+}

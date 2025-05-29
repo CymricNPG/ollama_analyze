@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.move.WorldDiffMove",
+    "methodName": "equals"
+  },
+  "javaDoc": "/**\n* Overrides the equals method to compare this WorldDiffMove object with another object.\n* Returns true if the objects are the same instance, or if the compared object is an instance of WorldDiffMove\n* and all corresponding fields (h, w, x, y, and diffs) are equal. The diffs are compared using the equals method\n* from the jfreerails.world.common.ImList class.\n*\n* @param o the object to compare with\n* @return true if the objects are equal, false otherwise\n*/"
+}

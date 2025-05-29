@@ -1,0 +1,4 @@
+{
+  "className": "jfreerails.util.ListKey",
+  "javaDoc": "/**\n* <strong>ListKey</strong> represents a composite key used to uniquely identify and order elements in a list structure.\n* It encapsulates a type (Element or EndPoint), a list identifier (Enum), and an array of indices, providing methods for\n* equality checks, ordering, and string representation. This class is designed to be used as a key in collections requiring\n* precise comparison and serialization capabilities.\n*\n* @author [Author Name]\n* @since 1.0\n* @see java.util.Enum\n* @see java.lang.Comparable\n* @see java.io.Serializable\n*/"
+}

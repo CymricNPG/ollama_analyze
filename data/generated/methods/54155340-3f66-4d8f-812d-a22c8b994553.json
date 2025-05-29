@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.world.train.PathOnTilesTest",
+    "methodName": "testGetPoint"
+  },
+  "javaDoc": "/**\n* Tests the getPoint method of the PathOnTiles class to ensure it correctly\n* returns the expected ImPoint at various steps along the path.\n*/"
+}

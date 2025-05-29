@@ -1,0 +1,4 @@
+{
+  "className": "jfreerails.controller.StockPriceCalculatorTest",
+  "javaDoc": "/**\n* Unit tests for the StockPriceCalculator class, verifying the behavior of its methods\n* including checking if a year is the first year, calculating net worth, tracking profits\n* from the last year, and computing stock prices based on game time and transactions.\n* This class uses helper methods to manage time progression and transaction additions\n* for test scenarios.\n*\n* @see jfreerails.controller.StockPriceCalculator\n*/"
+}

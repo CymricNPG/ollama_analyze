@@ -1,0 +1,4 @@
+{
+  "className": "jfreerails.util.List2DImpl",
+  "javaDoc": "/**\n* Implementation of the List2D interface providing a two-dimensional list structure.\n* This class manages a list of lists, allowing operations on both dimensions (d1 and d2).\n* It supports adding, removing, and accessing elements, as well as equality checks and hash code generation.\n*\n* @author [Author Name]\n* @since 1.0\n*\n* @see List2D\n* @see java.util.ArrayList\n*/"
+}

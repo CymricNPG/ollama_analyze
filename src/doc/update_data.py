@@ -25,7 +25,7 @@ def update_method_data(java_data: JavaCodeData, method_data: List[JavaUpdateMeth
 
         if existing_method and not existing_method.java_doc:
             existing_method.java_doc = new_method.java_doc
-    updated_methods += 1
+        updated_methods += 1
 
     logger.info(f"Updated documentation for {updated_methods} methods.")
 

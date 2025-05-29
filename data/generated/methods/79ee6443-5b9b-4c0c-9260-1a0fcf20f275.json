@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.world.accounts.Bill",
+    "methodName": "deltaCash"
+  },
+  "javaDoc": "/**\n* Returns the amount of money represented by this bill as a Money object.\n* This value represents the delta (change) in cash associated with the bill.\n*\n* @return the amount of money as a Money object\n*/"
+}

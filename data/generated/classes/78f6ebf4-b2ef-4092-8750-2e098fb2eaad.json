@@ -1,0 +1,4 @@
+{
+  "className": "jfreerails.world.common.ActivityIterator",
+  "javaDoc": "/**\n* This interface provides a bidirectional iterator for traversing a sequence of activities,\n* allowing access to their time-related properties and navigation between activities.\n* It supports methods to retrieve start and finish times, convert absolute time to relative\n* time, and obtain the current activity's state and details.\n*\n* @see Activity\n* @see FreerailsSerializable\n*/"
+}

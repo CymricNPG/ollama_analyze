@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.world.train.TrainMotion",
+    "methodName": "getPath"
+  },
+  "javaDoc": "/**\n* Returns the current path that the train is following.\n* This method provides access to the internal path representation\n* which details the route the train is taking across tiles.\n*\n* @return the PathOnTiles object representing the train's current path\n*/"
+}

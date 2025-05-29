@@ -1,0 +1,4 @@
+{
+  "className": "jfreerails.controller.OpenListTest",
+  "javaDoc": "/**\n* Test class for the OpenList class, verifying its core functionalities including\n* containment checks, smallest F value retrieval, size management, and addition operations.\n* This class contains unit tests to ensure the correctness of the OpenList implementation.\n*\n* @see OpenList\n*/"
+}

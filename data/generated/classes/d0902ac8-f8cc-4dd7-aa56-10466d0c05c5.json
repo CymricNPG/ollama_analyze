@@ -1,0 +1,4 @@
+{
+  "className": "jfreerails.world.train.CompositeSpeedAgainstTime",
+  "javaDoc": "/**\n* Represents a composite speed-time relationship composed of multiple {@link SpeedAgainstTime} segments.\n* This class aggregates individual speed-time data to compute overall duration, distance, and\n* instantaneous values (speed, acceleration) at any given time. It provides methods to calculate\n* cumulative distance, time, and state information based on the combined segments.\n*\n* @author [Your Name]\n* @see SpeedAgainstTime\n* @see Activity\n*/"
+}

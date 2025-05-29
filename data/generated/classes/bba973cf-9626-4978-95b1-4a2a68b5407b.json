@@ -1,0 +1,4 @@
+{
+  "className": "jfreerails.util.List1D",
+  "javaDoc": "/**\n* Represents a one-dimensional list of elements of type T.\n* This interface provides methods to manage the list, including adding, removing,\n* accessing, and modifying elements.\n*\n* @since 1.0\n* @see java.util.List\n*/"
+}

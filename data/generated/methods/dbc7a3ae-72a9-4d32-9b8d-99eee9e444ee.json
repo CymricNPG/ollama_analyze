@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "experimental.GenerateDependenciesXmlAndHtml",
+    "methodName": "add"
+  },
+  "javaDoc": "/**\n* Adds a single package name by converting it into a String array and delegating\n* to the {@link #add(String[])} method.\n*\n* @param packageName  The name of the package to be added.\n*/"
+}

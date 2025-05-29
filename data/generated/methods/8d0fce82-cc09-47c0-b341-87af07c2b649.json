@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.network.specifics.NewGameMessage2Server",
+    "methodName": "equals"
+  },
+  "javaDoc": "/**\n* Compares this {@code NewGameMessage2Server} object with the specified object for equality.\n* Two objects are considered equal if they have the same {@code id} and {@code mapName}.\n*\n* @param o the object to compare with this instance\n* @return true if the objects are equal, false otherwise\n*/"
+}

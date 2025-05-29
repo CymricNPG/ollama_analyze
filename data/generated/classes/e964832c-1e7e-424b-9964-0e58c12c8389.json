@@ -1,0 +1,4 @@
+{
+  "className": "jfreerails.world.common.Activity",
+  "javaDoc": "/**\n* Represents an activity with a duration and state transitions over time.\n* This interface defines methods to retrieve the duration of the activity\n* and to determine its state at a given time delta.\n*\n* @see FreerailsSerializable\n*/"
+}

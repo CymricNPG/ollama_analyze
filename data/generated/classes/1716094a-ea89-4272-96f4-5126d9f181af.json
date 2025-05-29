@@ -1,0 +1,4 @@
+{
+  "className": "jfreerails.client.view.BrokerScreenGeneratorTest",
+  "javaDoc": "/**\n* Test class for verifying the correctness of the BrokerScreenGenerator\n* under scenarios involving stock transactions. This test specifically\n* aims to reproduce and validate fixes for bug [1341365], where an exception\n* occurred when calculating stock prices after buying shares.\n*\n* @author John Doe\n* @see BrokerScreenGenerator\n* @see StockPriceCalculator\n*/"
+}

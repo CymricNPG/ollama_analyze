@@ -1,0 +1,4 @@
+{
+  "className": "jfreerails.util.UtilsTest",
+  "javaDoc": "/**\n* Test class for the equalsBySerialization method in the Utils class.\n* This test verifies that two serializable objects are considered equal if their serialized forms are identical.\n* <p>\n* The test covers various scenarios including equality of identical objects, self-equality, and inequality between different objects.\n* </p>\n* @see Utils\n* @see Point\n*/"
+}

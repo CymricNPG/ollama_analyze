@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.server.parser.Track_TilesParser",
+    "methodName": "skippedEntity"
+  },
+  "javaDoc": "/**\n* Callback method invoked when an XML entity is skipped during parsing.\n*\n* @param name The name of the XML entity that was skipped.\n* @throws SAXException If an error occurs while handling the skipped entity.\n*/"
+}

@@ -1,0 +1,4 @@
+{
+  "className": "jfreerails.util.List1DDiffsTest",
+  "javaDoc": "/**\n* Test class for the List1DDiff functionality, verifying its behavior\n* when tracking differences in a list structure. This class includes\n* test cases for value changes, additions, removals, and interactions\n* with a SortedMap to manage keyed differences.\n*\n* @author [Author Name]\n* @see List1D\n* @see List1DDiff\n* @see ListKey\n*/"
+}

@@ -1,0 +1,4 @@
+{
+  "className": "jfreerails.util.List3DDiffTest",
+  "javaDoc": "/**\n* Tests the List3DDiff class, which manages a 3D list with differences.\n* This class contains 12 test methods to verify the functionality of adding,\n* removing, and accessing elements in different dimensions (D1, D2, D3),\n* as well as checking the size of the list.\n*\n* @author John Doe\n* @see jfreerails.util.List3DDiff\n* @see jfreerails.util.List3DImpl\n* @see jfreerails.util.ListKey\n*/"
+}

@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.move.ChangeStationMove",
+    "methodName": "ChangeStationMove"
+  },
+  "javaDoc": "/**\n* Constructs a new ChangeStationMove instance that represents changing a station\n* at the specified index in a list. The move replaces the station at the given\n* index with the new station, using the provided principal for authorization.\n*\n* @param index the index of the station to be changed in the list\n* @param before the StationModel representing the station before the change\n* @param after the StationModel representing the new station after the change\n* @param p the FreerailsPrincipal used to validate the operation's permissions\n*/"
+}

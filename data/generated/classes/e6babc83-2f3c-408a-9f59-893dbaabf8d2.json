@@ -1,0 +1,4 @@
+{
+  "className": "jfreerails.world.terrain.NullTerrainType",
+  "javaDoc": "/**\n* Represents a null terrain type, serving as a default or placeholder implementation.\n* This singleton class provides empty or default values for all terrain type properties,\n* ensuring compatibility with the TerrainType interface when no specific terrain type is applicable.\n*\n* @author Your Name\n* @see TerrainType\n*/"
+}

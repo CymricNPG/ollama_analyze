@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.util.List3D",
+    "methodName": "get"
+  },
+  "javaDoc": "/**\n* Retrieves the list at the specified indices in the 3D structure.\n*\n* @param d1 the index along the first dimension\n* @param d2 the index along the second dimension\n* @return the list at the specified positions in the 3D structure\n*/"
+}

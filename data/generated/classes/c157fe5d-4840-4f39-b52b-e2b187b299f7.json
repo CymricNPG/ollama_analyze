@@ -1,0 +1,4 @@
+{
+  "className": "jfreerails.move.AddPlayerMoveTest",
+  "javaDoc": "/**\n* Test class for verifying the functionality of the {@link AddPlayerMove} class.\n* This class ensures that the AddPlayerMove correctly handles serialization,\n* undo operations, and non-repeatability constraints.\n*\n* @author John Doe\n* @since 1.0\n* @see AddPlayerMove\n* @see AbstractMoveTestCase\n* @see Utils\n*/"
+}

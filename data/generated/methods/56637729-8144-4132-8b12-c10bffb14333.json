@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.util.List2DDiff",
+    "methodName": "sizeD2"
+  },
+  "javaDoc": "/**\n* Returns the size of the specified dimension in the 2D list.\n*\n* @param d1 the dimension index (0 for the first dimension, 1 for the second)\n* @return the size of the specified dimension\n*/"
+}

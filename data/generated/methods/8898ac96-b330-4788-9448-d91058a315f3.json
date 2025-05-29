@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.client.view.MainMapAndOverviewMapMediator",
+    "methodName": "mouseReleased"
+  },
+  "javaDoc": "/**\n* Ends the drag operation by resetting the dragging state flag.\n* This method is called when a mouse button is released, indicating\n* that the drag interaction has concluded.\n*\n* @param evt The MouseEvent that triggered this method, providing\n*            details about the mouse release action.\n*/"
+}

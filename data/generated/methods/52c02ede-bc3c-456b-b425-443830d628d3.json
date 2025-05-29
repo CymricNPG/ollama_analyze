@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.server.parser.Track_TilesParser",
+    "methodName": "startDocument"
+  },
+  "javaDoc": "/**\n* Called when the parsing of a document starts.\n* Initializes any necessary state or resources required for parsing the track tiles data.\n*\n* @throws SAXException if an error occurs during document initialization.\n*/"
+}

@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.world.player.PlayerPrincipal",
+    "methodName": "toString"
+  },
+  "javaDoc": "/**\n* Overrides the toString method from the superclass to provide a string\n* representation of the player principal. This method returns a formatted\n* string that includes the player's ID.\n*\n* @return A string in the format \"Player {id}\", where {id} is the player's unique identifier.\n*/"
+}

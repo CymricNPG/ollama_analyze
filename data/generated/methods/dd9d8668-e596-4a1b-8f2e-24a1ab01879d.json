@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.world.common.PositionOnTrack",
+    "methodName": "createComingFrom"
+  },
+  "javaDoc": "/**\n* Creates a new PositionOnTrack instance representing a position on the rail track.\n* The direction parameter indicates the direction from which the position is approached.\n*\n* @param x the x-coordinate of the position on the track\n* @param y the y-coordinate of the position on the track\n* @param direction the Step enum value indicating the direction from which the position is coming\n* @return a new PositionOnTrack instance with the specified coordinates and direction\n*/"
+}

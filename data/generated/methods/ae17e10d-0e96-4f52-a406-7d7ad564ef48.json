@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.client.view.HtmlJPanel",
+    "methodName": "HtmlJPanel"
+  },
+  "javaDoc": "/**\n* Constructs a new HtmlJPanel with the specified HTML content.\n*\n* @param html the HTML content to be displayed in the panel\n*\n* This constructor initializes the panel's components by calling\n* {@link #initComponents()} and then sets the HTML content using\n* {@link #setHtml(String)}.\n*/"
+}

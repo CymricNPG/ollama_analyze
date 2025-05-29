@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.client.view.MainMapAndOverviewMapMediator",
+    "methodName": "mouseClicked"
+  },
+  "javaDoc": "/**\n* Handles mouse click events on the overview map. Converts the click coordinates\n* to the corresponding position on the main map based on their relative sizes,\n* scrolls the main map to that position, and triggers an update of the internal\n* state via the {@code updateInside} method.\n*\n* @param evt the mouse event triggered by the user's click on the overview map\n*/"
+}

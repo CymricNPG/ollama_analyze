@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.client.view.TrainScheduleJPanel",
+    "methodName": "changeStationActionPerformed"
+  },
+  "javaDoc": "/**\n* Handles the action event when the user selects a different station.\n* Retrieves the selected order index from the orders component and triggers\n* the station selection dialog using {@link #showSelectStation}.\n*\n* @param evt The ActionEvent object representing the user's interaction.\n*            This parameter is not directly used in the method logic.\n*/"
+}

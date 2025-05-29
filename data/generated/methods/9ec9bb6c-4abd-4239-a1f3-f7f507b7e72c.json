@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.controller.TrainAccessor",
+    "methodName": "getId"
+  },
+  "javaDoc": "/**\n* Returns the unique identifier of this train accessor.\n*\n* @return the unique identifier of the train accessor\n*/"
+}

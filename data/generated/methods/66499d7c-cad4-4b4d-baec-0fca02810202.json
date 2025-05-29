@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.world.track.TrackRule",
+    "methodName": "trackPieceIsLegal"
+  },
+  "javaDoc": "/**\n* Checks whether the track piece configured in the given TrackConfiguration is legally placed\n* according to the rules defined by this TrackRule subclass.\n*\n* @param config the configuration of the track piece to be validated\n* @return true if the track piece is legally placed, false otherwise\n*/"
+}

@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.world.common.ImHashSet",
+    "methodName": "ImHashSet"
+  },
+  "javaDoc": "/**\n* Constructs an ImHashSet containing all elements from the provided list.\n*\n* @param values the list of elements to be added to the hash set\n*/"
+}

@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.controller.CargoElementObject",
+    "methodName": "setRate"
+  },
+  "javaDoc": "/**\n* Sets the rate for this cargo element.\n*\n* @param rate  The rate value to set.\n*/"
+}

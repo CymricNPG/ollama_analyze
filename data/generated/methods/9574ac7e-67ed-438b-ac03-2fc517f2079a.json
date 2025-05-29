@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.move.RemoveItemFromListMove",
+    "methodName": "hashCode"
+  },
+  "javaDoc": "/**\n* Overrides the hashCode method to generate a hash code based on the object's state.\n* The hash code is computed using the {@code item}, {@code listKey}, {@code index}, and {@code principal} fields.\n* This ensures that objects with equal state produce the same hash code, adhering to the Object.hashCode contract.\n*\n* @return the computed hash code.\n*/"
+}

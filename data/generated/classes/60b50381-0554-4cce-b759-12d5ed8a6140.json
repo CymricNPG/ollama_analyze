@@ -1,0 +1,4 @@
+{
+  "className": "jfreerails.util.List2D",
+  "javaDoc": "/**\n* A two-dimensional list interface that supports dynamic resizing and element manipulation.\n* This interface provides methods to manage elements in a 2D structure, allowing for\n* operations such as adding, removing, and retrieving elements along both dimensions.\n*\n* @author Your Name\n* @since 1.0\n* @see java.util.List\n*/"
+}

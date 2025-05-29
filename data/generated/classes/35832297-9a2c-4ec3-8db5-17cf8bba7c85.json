@@ -1,0 +1,4 @@
+{
+  "className": "jfreerails.move.NextActivityMove",
+  "javaDoc": "/**\n* Represents a move to advance to the next activity in a sequence for a given principal.\n* This class encapsulates the logic for performing and undoing the move, ensuring\n* validity through the MoveStatus enum. It is responsible for managing activity transitions\n* within a world state.\n*\n* @author John Doe\n* @see Move\n* @see Activity\n* @see FreerailsPrincipal\n* @see World\n*/"
+}

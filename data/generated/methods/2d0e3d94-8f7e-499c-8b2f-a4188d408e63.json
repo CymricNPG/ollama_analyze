@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.client.view.SaveGameJPanel",
+    "methodName": "oKButtonActionPerformed"
+  },
+  "javaDoc": "/**\n* Handles the action event when the OK button is pressed.\n* Retrieves the filename from the text field, saves the current game\n* by setting the QUICK_MESSAGE property and sending a SaveGameMessage2Server\n* command to the model. Also closes the panel.\n*\n* @param evt the ActionEvent triggered by the OK button action\n* @throws Exception if an error occurs during property setting or command sending\n*/"
+}

@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.world.top.SKEY",
+    "methodName": "getNumberOfKeys"
+  },
+  "javaDoc": "/**\n* Returns the number of keys (fields) defined in the SKEY class.\n* This value is determined by counting the number of fields exposed by the SKEY class.\n*\n* @return the number of keys (fields) in the SKEY class\n*/"
+}

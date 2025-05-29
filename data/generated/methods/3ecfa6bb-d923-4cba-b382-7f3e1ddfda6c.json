@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.world.train.CompositeSpeedAgainstTime",
+    "methodName": "CompositeSpeedAgainstTime"
+  },
+  "javaDoc": "/**\n* Constructs a CompositeSpeedAgainstTime by aggregating multiple\n* {@link jfreerails.world.train.SpeedAgainstTime} instances.\n*\n* @param accs an array of {@link jfreerails.world.train.SpeedAgainstTime}\n*             objects to be combined into a composite speed-time profile.\n*             Null values in the array will trigger a null check via\n*             {@link jfreerails.world.common.ImList#checkForNulls()}.\n*\n* @throws NullPointerException if any element in the {@code accs} array is null.\n*/"
+}

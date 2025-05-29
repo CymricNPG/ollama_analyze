@@ -1,0 +1,4 @@
+{
+  "className": "jfreerails.controller.Node",
+  "javaDoc": "/**\n* Represents a node in a graph structure, containing arrays of edges and distances.\n* This class ensures that the edges and distances arrays are of equal length upon construction.\n*\n* @author YourName\n* @since 1.0\n*\n* @see Graph\n*/"
+}

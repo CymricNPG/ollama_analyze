@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.util.FlowRateInputStream",
+    "methodName": "FlowRateInputStream"
+  },
+  "javaDoc": "/**\n* Initializes a new FlowRateInputStream with the specified input stream and stream name.\n* This constructor uses default values for the flow rate parameters, which are 60 and 1000.\n*\n* @param in the underlying input stream to wrap\n* @param streamName the name of the stream (used for logging or identification purposes)\n*/"
+}

@@ -1,0 +1,4 @@
+{
+  "className": "jfreerails.util.List1DImpl",
+  "javaDoc": "/**\n* A concrete implementation of the List1D interface, providing a one-dimensional list\n* with standard operations such as add, remove, get, and set. This implementation uses\n* an ArrayList to store elements and provides basic list functionality.\n*\n* @see List1D\n* @see java.util.ArrayList\n*/"
+}

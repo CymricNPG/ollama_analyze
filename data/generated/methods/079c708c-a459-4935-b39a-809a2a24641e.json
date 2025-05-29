@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.server.TrainPathFinder",
+    "methodName": "TrainPathFinder"
+  },
+  "javaDoc": "/**\n* Constructs a new TrainPathFinder with the specified parameters.\n*\n* @param tx the FlatTrackExplorer used to navigate the track layout\n* @param w the ReadOnlyWorld representing the current game world state\n* @param trainNumber the unique identifier for the train\n* @param newMr the MoveReceiver responsible for handling move events\n* @param p the FreerailsPrincipal representing the user's permissions or identity\n*\n* @throws IllegalArgumentException if any parameter is null or invalid\n*/"
+}

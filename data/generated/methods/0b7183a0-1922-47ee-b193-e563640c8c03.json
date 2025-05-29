@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.launcher.SelectMapJPanel",
+    "methodName": "setServerPortPanelVisible"
+  },
+  "javaDoc": "/**\n* Sets the visibility of the server port panel.\n*\n* @param b  {@code true} to show the server port panel, {@code false} to hide it\n*/"
+}

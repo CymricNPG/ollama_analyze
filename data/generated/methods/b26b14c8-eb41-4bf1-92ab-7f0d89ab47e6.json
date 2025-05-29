@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.world.top.NonNullElements",
+    "methodName": "gotoRow"
+  },
+  "javaDoc": "/**\n* Moves the current row to the specified newRow by navigating through the sequence of elements.\n* If the current row is already equal to newRow, this method has no effect.\n* If newRow is greater than the current row, it advances to the target row using the {@code next()} method.\n* If newRow is less than the current row, it moves backward to the target row using the {@code previous()} method.\n*\n* @param newRow the target row index to move to\n*/"
+}

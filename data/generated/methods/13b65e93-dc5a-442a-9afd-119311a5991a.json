@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.move.ChangeItemInListMove",
+    "methodName": "tryDoMove"
+  },
+  "javaDoc": "/**\n* Attempts to perform the move operation by invoking the internal tryMove method.\n* This method is responsible for executing the change of an item in a list within the game world.\n*\n* @param w The current game world state used to apply the move.\n* @param p The principal (user) associated with the move operation.\n* @return The status of the move operation indicating success, failure, or partial success.\n*/"
+}

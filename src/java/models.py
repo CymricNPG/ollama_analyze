@@ -38,7 +38,7 @@ class JavaUpdateClass:
     @classmethod
     def __from_dict__(cls, data: dict[str, str]):
         return JavaUpdateClass(
-            class_name=data.get('class_name'),
+            class_name=data.get('className'),
             java_doc=data.get('javaDoc'),
         )
 

@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.client.renderer.TrainImages",
+    "methodName": "generateSideOnFilename"
+  },
+  "javaDoc": "/**\n* Generates the filename for a side-on view train image based on the provided train name.\n*\n* @param name the name of the train used to construct the filename\n* @return the full path to the side-on image file, including the directory structure and .png extension\n*/"
+}

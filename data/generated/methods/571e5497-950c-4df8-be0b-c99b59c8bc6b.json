@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.world.common.ImPoint",
+    "methodName": "toPoint"
+  },
+  "javaDoc": "/**\n* Converts this ImPoint instance to a Point object with the same coordinates.\n*\n* @return a new Point instance with the same x and y values as this ImPoint.\n*/"
+}

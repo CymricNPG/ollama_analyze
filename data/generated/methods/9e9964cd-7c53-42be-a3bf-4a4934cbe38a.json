@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.client.view.BuildTrackJPanel",
+    "methodName": "formKeyTyped"
+  },
+  "javaDoc": "/**\n* Handles the key typed event by invoking the doClick method on the viewMode.\n* This method is triggered when a key is typed in the associated component,\n* causing the view mode to perform its default click action.\n*\n* @param evt the KeyEvent object representing the key typed event\n*/"
+}

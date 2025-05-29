@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.world.terrain.CityModel",
+    "methodName": "hashCode"
+  },
+  "javaDoc": "/**\n* Overrides the {@code hashCode} method from the {@code Object} class to generate a hash code\n* based on the object's state. The hash code is computed using the {@code name}, {@code x}, and\n* {@code y} fields, ensuring that objects with the same values for these fields produce the same\n* hash code.\n*\n* @return the computed hash code for this object\n*/"
+}

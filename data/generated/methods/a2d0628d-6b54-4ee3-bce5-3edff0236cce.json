@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.server.ServerGameModelImpl",
+    "methodName": "ServerGameModelImpl"
+  },
+  "javaDoc": "/**\n* Initializes a new instance of the ServerGameModelImpl class with the specified game world\n* and collection of server automata. This constructor sets up the internal state by assigning\n* the provided world and automata, and records the time when the next model update is due.\n*\n* @param w the game world representing the current state of the simulation\n* @param serverAutomata a vector of server automata responsible for managing game logic\n* @throws IllegalArgumentException if the provided parameters are null or invalid\n*/"
+}

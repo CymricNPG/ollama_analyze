@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.client.view.DialogueBoxController",
+    "methodName": "showBalanceSheet"
+  },
+  "javaDoc": "/**\n* Displays the balance sheet by creating and configuring a BalanceSheetHtmlJPanel,\n* then showing the content within the dialogue box.\n*/"
+}

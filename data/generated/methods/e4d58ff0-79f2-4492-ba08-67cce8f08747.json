@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.world.cargo.MutableCargoBundle",
+    "methodName": "equals"
+  },
+  "javaDoc": "/**\n* Compares this MutableCargoBundle instance with the specified object for equality.\n* This method first checks if the object is null or not an instance of CargoBundle,\n* returning false in such cases. If both conditions are satisfied, it delegates the\n* equality check to the {@code equals} method of {@code ImmutableCargoBundle},\n* comparing this bundle with the provided CargoBundle instance.\n*\n* @param arg0 the object to compare with this instance\n* @return true if the objects are considered equal, false otherwise\n*/"
+}

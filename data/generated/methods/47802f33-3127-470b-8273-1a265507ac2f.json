@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.client.view.TrainListJPanel",
+    "methodName": "setTrainViewHeight"
+  },
+  "javaDoc": "/**\n* Sets the height of the train view.\n*\n* @param trainViewHeight the new height value for the train view\n*/"
+}

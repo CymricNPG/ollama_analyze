@@ -1,0 +1,4 @@
+{
+  "className": "jfreerails.world.terrain.MiscTest",
+  "javaDoc": "/**\n* Test class for verifying the correctness of hash code and equals methods\n* for CityModel and TileTypeImpl classes.\n*\n* This class contains test cases to ensure that objects correctly implement\n* the equals and hashCode methods, and that different instances are\n* considered unequal.\n*\n* @see CityModel\n* @see TileTypeImpl\n* @see Utils\n*/"
+}

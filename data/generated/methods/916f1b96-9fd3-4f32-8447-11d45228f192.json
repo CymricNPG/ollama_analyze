@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.world.train.PathOnTiles",
+    "methodName": "getDistance"
+  },
+  "javaDoc": "/**\n* Calculates the total distance covered by the first 'steps' steps in the path.\n*\n* @param steps the number of steps to include in the distance calculation.\n* @return the accumulated distance from the first 'steps' steps.\n*/"
+}

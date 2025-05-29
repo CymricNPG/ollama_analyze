@@ -1,0 +1,7 @@
+{
+  "src": {
+    "className": "jfreerails.controller.DropOffAndPickupCargoMoveGeneratorTest",
+    "methodName": "stopAtStation"
+  },
+  "javaDoc": "/**\n* Tests the generation of a move for stopping at a station.\n* Creates an instance of {@code DropOffAndPickupCargoMoveGenerator},\n* generates a move, and verifies that the move execution results in\n* {@code MoveStatus.MOVE_OK}.\n*\n* @param w The world state used for move execution (assumed to be an instance variable).\n*/"
+}
