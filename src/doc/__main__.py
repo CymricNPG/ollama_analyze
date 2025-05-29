@@ -18,14 +18,17 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 import logging
 
 from config import Config, LLMConfig
-from doc.doc_generator import JavaDocumentationGenerator
+from doc.class_doc_generator import ClassDocumentationGenerator
+from doc.method_doc_generator import MethodDocumentationGenerator
+from doc.update_data import update_class_data
 from java import builder
 from java.models import JavaCodeData
+from .update_data import read_class_updates, read_method_updates, update_class_data, update_method_data
 
 logger = logging.getLogger(__name__)
 
 
-def generate_documentation(java_data: JavaCodeData, base_dir :str='.') -> JavaCodeData:
+def generate_documentation(java_data: JavaCodeData, base_dir: str = '.'):
     """Generate missing documentation for Java code."""
 
     logger.info("Starting documentation generation phase")
@@ -34,16 +37,13 @@ def generate_documentation(java_data: JavaCodeData, base_dir :str='.') -> JavaCo
     llm_config = LLMConfig()
 
     # Initialize documentation generator
-    doc_generator = JavaDocumentationGenerator(llm_config, Config.get_output_dir(base_dir))
+    class_doc_generator = ClassDocumentationGenerator(llm_config, Config.get_classes_output_dir(base_dir))
+    method_doc_generator = MethodDocumentationGenerator(llm_config, Config.get_methods_output_dir(base_dir))
 
     # Generate documentation
-    updated_data = doc_generator.generate_missing_documentation(java_data)
-
-    # Print statistics
-    stats = doc_generator.get_statistics()
-    logger.info(f"Documentation generation completed with {stats.success_rate:.1f}% success rate")
-
-    return updated_data
+    class_data = class_doc_generator.generate_documentation(java_data)
+    update_class_data(java_data, class_data)
+    method_doc_generator.generate_documentation(java_data)
 
 
 def main():
@@ -51,7 +51,13 @@ def main():
     builder.Config.setup_logging()
 
     java_data = builder.read_structure("../data/")
-    new_data = generate_documentation(java_data, "../data/")
+
+    class_updates = read_class_updates(Config.get_classes_output_dir("../data/"))
+    method_updates = read_method_updates(Config.get_methods_output_dir("../data/"))
+    update_class_data(java_data, class_updates)
+    update_method_data(java_data, method_updates)
+
+    generate_documentation(java_data, "../data/")
 
 
 if __name__ == "__main__":

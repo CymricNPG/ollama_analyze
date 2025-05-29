@@ -23,7 +23,7 @@ from llm.llm_access import LLMAccessLayer
 from config import LLMConfig
 
 
-class JavaDocGenerator:
+class JavaDocLLMGenerator:
     """Specialized generator for JavaDoc documentation using LLM."""
     
     def __init__(self, config: LLMConfig = None):

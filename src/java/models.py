@@ -21,6 +21,35 @@ from typing import List, Optional
 
 
 @dataclass
+class JavaUpdateClass:
+    """Represents an update to Java class with its metadata."""
+    class_name: str
+    java_doc: str
+
+    def __post_init__(self):
+        """Validate and clean data after initialization."""
+        if not self.class_name:
+            raise ValueError("Class name cannot be empty")
+        if self.java_doc and not self.java_doc.strip():
+            raise ValueError("javadoc cannot be empty")
+        if not self.java_doc:
+            raise ValueError("javadoc cannot be empty")
+
+    @classmethod
+    def __from_dict__(cls, data: dict[str, str]):
+        return JavaUpdateClass(
+            class_name=data.get('class_name'),
+            java_doc=data.get('javaDoc'),
+        )
+
+    def __to_dict__(self) -> dict[str, str]:
+        return {
+            "className": self.class_name,
+            "javaDoc": self.java_doc
+        }
+
+
+@dataclass
 class JavaClass:
     """Represents a Java class with its metadata."""
     class_name: str
@@ -55,6 +84,9 @@ class MethodSource:
     class_name: str
     method_name: str
 
+    def __str__(self):
+        return f"{self.class_name}.{self.method_name}"
+
     def __post_init__(self):
         """Validate data after initialization."""
         if not self.class_name or not self.method_name:
@@ -81,6 +113,45 @@ class JavaMethod:
         # Ensure dst_methods is a list
         if self.dst_methods is None:
             self.dst_methods = []
+
+
+@dataclass
+class JavaUpdateMethod:
+    """Represents a Java method with its metadata and dependencies."""
+    src: MethodSource
+    java_doc: str
+
+    @staticmethod
+    def __from_dict__(data):
+        src_data = data['src']
+        src = MethodSource(
+            class_name=src_data['className'],
+            method_name=src_data['methodName']
+        )
+        return JavaUpdateMethod(
+            src=src,
+            java_doc=data.get('javaDoc'),
+        )
+
+    def __post_init__(self):
+        """Validate and clean data after initialization."""
+        if not self.src:
+            raise ValueError("Src cannot be empty")
+
+        if self.java_doc and not self.java_doc.strip():
+            raise ValueError("javadoc cannot be empty")
+
+        if not self.java_doc:
+            raise ValueError("javadoc cannot be empty")
+
+    def __to_dict__(self):
+        return {
+            "src": {
+                "className": self.src.class_name,
+                "methodName": self.src.method_name
+            },
+            "javaDoc": self.java_doc
+        }
 
 
 @dataclass
@@ -115,3 +186,10 @@ class JavaCodeData:
                     method.src.method_name == method_name):
                 return method.dst_methods
         return []
+
+    def get_method_by_name(self, src: MethodSource) -> Optional[JavaMethod]:
+        for method in self.methods:
+            if (method.src.class_name == src.class_name and
+                    method.src.method_name == src.method_name):
+                return method
+        return None

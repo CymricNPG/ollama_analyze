@@ -28,7 +28,8 @@ class Config:
     # File paths
     CLASSES_FILE = "java_classes.json"
     METHODS_FILE = "java_methods.json"
-    OUTPUT_DIR = "generated"
+    OUTPUT_CLASSES_DIR = "generated/classes"
+    OUTPUT_METHODS_DIR = "generated/methods"
 
     # Logging configuration
     LOG_LEVEL = logging.INFO
@@ -64,9 +65,14 @@ class Config:
         return str(classes_file), str(methods_file)
 
     @classmethod
-    def get_output_dir(cls, base_path: str = ".") -> str:
+    def get_methods_output_dir(cls, base_path: str = ".") -> str:
         base = Path(base_path)
-        return str(base / cls.OUTPUT_DIR)
+        return str(base / cls.OUTPUT_METHODS_DIR)
+
+    @classmethod
+    def get_classes_output_dir(cls, base_path: str = ".") -> str:
+        base = Path(base_path)
+        return str(base / cls.OUTPUT_CLASSES_DIR)
 
 
 @dataclass
