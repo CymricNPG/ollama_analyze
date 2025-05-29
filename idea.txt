@@ -1,0 +1,13 @@
+Ich will eine Dokumentationssuche in Python für Sourcecode und anderen Textdateien implementieren, die auf einer LLM basiert.
+Die Idee ist, dass man mittels einer lokalen LLM (ollama) alle Dateien analysiert und kurze Beschreibungen und Schüsselwörter
+ erzeugt.
+Weiterhin werden die Dependencies zwischen den Dateien über eine separate Datei als Graph erzeugt. Die
+ Applikation soll dann aus den erzeugten Beschreibungen und den Dependencies Fragen mittels einer lokalen
+ LLM beantworten können. Wie gehe ich da vor?
+
+
+ 1. **Vektorbasierte Suche**: Verwenden Sie Embeddings, um relevante Dokumente effizienter zu finden
+ 2. **Robustere Dependency-Analyse**: Nutzen Sie AST (Abstract Syntax Tree) für eine präzisere Analyse der Python-Importe
+ 3. **Inkrementelle Updates**: Implementieren Sie Mechanismen, um nur geänderte Dateien neu zu analysieren
+ 4. **Caching**: Speichern Sie LLM-Antworten, um wiederholte Anfragen zu beschleunigen
+ 5. **Web-Interface**: Erstellen Sie eine Benutzeroberfläche für einfachere Bedienung
