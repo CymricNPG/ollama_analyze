@@ -51,11 +51,6 @@ def main():
 
     java_data = builder.read_structure("../data/")
 
-    class_updates = read_class_updates(Config.get_classes_output_dir("../data/"))
-    method_updates = read_method_updates(Config.get_methods_output_dir("../data/"))
-    update_class_data(java_data, class_updates)
-    update_method_data(java_data, method_updates)
-
     generate_documentation(java_data, "../data/")
 
 

@@ -14,7 +14,6 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Main application entry point for Java code analysis.
 """
 import logging
 import sys
@@ -23,8 +22,17 @@ from pathlib import Path
 from config import Config
 from .data_reader import JavaDataReader
 from .models import JavaCodeData
+from .update_data import read_class_updates, read_method_updates, update_class_data, update_method_data
+from .utils import is_valid_method, is_valid_class
 
 logger = logging.getLogger(__name__)
+
+
+def remove_unwanted(java_data: JavaCodeData):
+    base = JavaCodeData(classes=[data for data in java_data.classes if is_valid_class(data)],
+                        methods=[data for data in java_data.methods if is_valid_method(data)])
+    return base
+
 
 def read_structure(base_path: str = ".") -> JavaCodeData:
     """Main application entry point."""
@@ -53,11 +61,21 @@ def read_structure(base_path: str = ".") -> JavaCodeData:
 
         logger.info("Read completed successfully")
 
+        class_updates = read_class_updates(Config.get_classes_output_dir(base_path))
+        method_updates = read_method_updates(Config.get_methods_output_dir(base_path))
+        update_class_data(java_data, class_updates)
+        update_method_data(java_data, method_updates)
+
+        java_data = remove_unwanted(java_data)
+
+        logger.info(
+            f"Java code data read successfully. Total classes: {len(java_data.classes)}, total methods: {len(java_data.methods)}"
+        )
+
         return java_data
     except Exception as e:
         logger.error(f"Read failed: {e}")
         sys.exit(1)
-
 
 
 def print_data_summary(java_data: JavaCodeData):
@@ -113,5 +131,3 @@ def demonstrate_data_access(java_data: JavaCodeData):
         print(f"\nMethod with most dependencies:")
         print(f"  {method_with_most_deps.src.class_name}.{method_with_most_deps.src.method_name}")
         print(f"  Dependencies: {len(method_with_most_deps.dst_methods)}")
-
-

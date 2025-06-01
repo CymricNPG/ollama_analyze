@@ -20,6 +20,7 @@ from typing import List, Optional
 
 from java.models import JavaCodeData, JavaMethod, JavaUpdateMethod
 from config import LLMConfig
+from java.utils import is_valid_method
 from .doc_common import BaseDocumentationGenerator
 
 
@@ -52,7 +53,7 @@ class MethodDocumentationGenerator(BaseDocumentationGenerator):
             self.logger.error("Method documentation generator is not ready")
             raise RuntimeError("Method documentation generator not ready")
 
-        methods_without_docs = [method for method in java_data.methods if not method.java_doc and self.is_valid_method(method)]
+        methods_without_docs = [method for method in java_data.methods if not method.java_doc and is_valid_method(method)]
 
         self.logger.info(f"Found {len(methods_without_docs)} methods without documentation")
 
@@ -113,15 +114,3 @@ class MethodDocumentationGenerator(BaseDocumentationGenerator):
 
         return ". ".join(context_parts) if context_parts else ""
 
-    def is_valid_method(self, method: JavaMethod) -> bool:
-        if self.get_class_name_from_qualified_name(method.src.class_name) == method.src.method_name:
-            # constructor
-            return False
-        invalid_method_names = ["equals", "hashCode", "toString", "clone", "finalize", "wait", "notify", "notifyAll"]
-        if method.src.method_name in invalid_method_names:
-            return False
-        return True
-
-    def get_class_name_from_qualified_name(self, qualified_name: str) -> str:
-        """Extract class name from fully qualified name."""
-        return qualified_name.split('.')[-1]
