@@ -259,6 +259,7 @@ class JavaCodeHTMLGenerator:
                 position: fixed;
                 height: 100vh;
                 box-sizing: border-box;
+                z-index: 1000;
             }
             
             .navigation h2 {
@@ -304,6 +305,7 @@ class JavaCodeHTMLGenerator:
                 padding: 20px;
                 flex: 1;
                 background-color: white;
+                min-width: 0; /* Prevent flex item from overflowing */
             }
             
             .class-section, .method-section {
@@ -313,6 +315,16 @@ class JavaCodeHTMLGenerator:
                 padding: 20px;
                 background-color: white;
                 box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                /* Ensure sections have proper scroll positioning */
+                scroll-margin-top: 20px;
+                /* Add a subtle left border to indicate active section */
+                position: relative;
+            }
+            
+            /* Add visual indicator for target sections */
+            .class-section:target, .method-section:target {
+                border-left: 5px solid #3498db;
+                box-shadow: 0 2px 8px rgba(52, 152, 219, 0.2);
             }
             
             .class-title, .method-title {
@@ -397,19 +409,96 @@ class JavaCodeHTMLGenerator:
                 font-style: italic;
             }
             
-            /* Smooth scrolling */
+            /* Smooth scrolling with proper offset */
             html {
+                scroll-behavior: smooth;
+                scroll-padding-top: 20px;
+            }
+            
+            /* Custom scrolling behavior to account for sidebar */
+            .main-content {
                 scroll-behavior: smooth;
             }
             
-            /* Highlight target elements */
+            /* Ensure content is never hidden behind sidebar */
+            body {
+                overflow-x: hidden;
+            }
+            
+            /* Highlight target elements with animation */
             :target {
                 animation: highlight 2s ease-in-out;
             }
             
             @keyframes highlight {
-                0% { background-color: #f39c12; }
-                100% { background-color: transparent; }
+                0% { 
+                    background-color: rgba(243, 156, 18, 0.3);
+                    transform: scale(1.02);
+                }
+                100% { 
+                    background-color: transparent;
+                    transform: scale(1);
+                }
+            }
+            
+            /* Responsive design improvements */
+            @media (max-width: 768px) {
+                .navigation {
+                    width: 250px;
+                }
+                
+                .main-content {
+                    margin-left: 250px;
+                }
+            }
+            
+            /* For very small screens, make sidebar collapsible */
+            @media (max-width: 600px) {
+                .navigation {
+                    transform: translateX(-100%);
+                    transition: transform 0.3s ease;
+                }
+                
+                .navigation.open {
+                    transform: translateX(0);
+                }
+                
+                .main-content {
+                    margin-left: 0;
+                    padding: 10px;
+                }
+                
+                /* Add a toggle button for mobile */
+                .nav-toggle {
+                    display: block;
+                    position: fixed;
+                    top: 10px;
+                    left: 10px;
+                    z-index: 1001;
+                    background: #2c3e50;
+                    color: white;
+                    border: none;
+                    padding: 10px;
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+            }
+            
+            @media (min-width: 601px) {
+                .nav-toggle {
+                    display: none;
+                }
+            }
+            
+            /* Ensure long code blocks don't break layout */
+            .code {
+                word-break: break-all;
+                white-space: pre-wrap;
+            }
+            
+            /* Better spacing for nested content */
+            .class-content > *, .method-content > * {
+                margin-bottom: 0;
             }
         </style>
         """
@@ -446,6 +535,30 @@ class JavaCodeHTMLGenerator:
         html_content += """
         </main>
     </div>
+
+    <script>
+        // Add mobile navigation toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Create mobile toggle button
+            const toggleButton = document.createElement('button');
+            toggleButton.className = 'nav-toggle';
+            toggleButton.innerHTML = '☰';
+            toggleButton.addEventListener('click', function() {
+                const nav = document.querySelector('.navigation');
+                nav.classList.toggle('open');
+            });
+            document.body.appendChild(toggleButton);
+            
+            // Close sidebar when clicking on main content on mobile
+            const mainContent = document.querySelector('.main-content');
+            mainContent.addEventListener('click', function() {
+                if (window.innerWidth <= 600) {
+                    const nav = document.querySelector('.navigation');
+                    nav.classList.remove('open');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
         """
