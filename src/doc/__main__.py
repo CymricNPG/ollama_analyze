@@ -20,7 +20,6 @@ import logging
 from config import Config, LLMConfig
 from doc.class_doc_generator import ClassDocumentationGenerator
 from doc.method_doc_generator import MethodDocumentationGenerator
-from doc.update_data import update_class_data
 from java import builder
 from java.models import JavaCodeData
 from .update_data import read_class_updates, read_method_updates, update_class_data, update_method_data
