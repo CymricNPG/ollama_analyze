@@ -48,11 +48,11 @@ def read_structure(base_path: str = ".") -> JavaCodeData:
 
         # Check if files exist
         if not Path(classes_file).exists():
-            logger.error(f"Classes file not found: {classes_file}")
+            logger.error(f"Classes file not found: {classes_file.absolute()}")
             sys.exit(1)
 
         if not Path(methods_file).exists():
-            logger.error(f"Methods file not found: {methods_file}")
+            logger.error(f"Methods file not found: {methods_file.absolute()}")
             sys.exit(1)
 
         # Read the Java code data

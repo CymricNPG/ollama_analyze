@@ -34,7 +34,7 @@ class JavaDataReader:
         """Initialize the data reader."""
         self.logger = logging.getLogger(__name__)
 
-    def read_classes_file(self, file_path: str) -> List[JavaClass]:
+    def read_classes_file(self, file_path: Path) -> List[JavaClass]:
         """
         Read Java classes from a JSON file.
         
@@ -51,12 +51,11 @@ class JavaDataReader:
         """
         self.logger.info(f"Reading classes from file: {file_path}")
 
-        file_path_obj = Path(file_path)
-        if not file_path_obj.exists():
+        if not file_path.exists():
             raise FileNotFoundError(f"Classes file not found: {file_path}")
 
         try:
-            with open(file_path_obj, 'r', encoding='utf-8') as file:
+            with open(file_path, 'r', encoding='utf-8') as file:
                 data = file.read().strip()
 
                 # Handle the case where each line is a separate JSON object
@@ -78,7 +77,7 @@ class JavaDataReader:
             self.logger.error(f"Error reading classes file: {e}")
             raise
 
-    def read_methods_file(self, file_path: str) -> List[JavaMethod]:
+    def read_methods_file(self, file_path: Path) -> List[JavaMethod]:
         """
         Read Java methods from a JSON file.
         
@@ -95,12 +94,11 @@ class JavaDataReader:
         """
         self.logger.info(f"Reading methods from file: {file_path}")
 
-        file_path_obj = Path(file_path)
-        if not file_path_obj.exists():
+        if not file_path.exists():
             raise FileNotFoundError(f"Methods file not found: {file_path}")
 
         try:
-            with open(file_path_obj, 'r', encoding='utf-8') as file:
+            with open(file_path, 'r', encoding='utf-8') as file:
                 data = file.read().strip()
 
                 # Handle the case where each line is a separate JSON object
@@ -122,7 +120,7 @@ class JavaDataReader:
             self.logger.error(f"Error reading methods file: {e}")
             raise
 
-    def read_java_data(self, classes_file: str, methods_file: str) -> JavaCodeData:
+    def read_java_data(self, classes_file: Path, methods_file: Path) -> JavaCodeData:
         """
         Read both classes and methods files and return combined data.
         

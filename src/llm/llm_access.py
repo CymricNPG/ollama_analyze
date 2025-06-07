@@ -18,7 +18,6 @@ Technical LLM access layer for interacting with Ollama.
 This is a generic layer that can be used for various LLM tasks.
 """
 import logging
-import sys
 from typing import Optional, Dict, Any, List
 import ollama
 from config import LLMConfig

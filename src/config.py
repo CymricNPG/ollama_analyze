@@ -48,7 +48,7 @@ class Config:
         )
 
     @classmethod
-    def get_data_files_path(cls, base_path: str = ".") -> tuple[str, str]:
+    def get_data_files_path(cls, base_path: str = ".") -> tuple[Path, Path]:
         """
         Get the full paths to data files.
 
@@ -62,7 +62,7 @@ class Config:
         classes_file = base / cls.CLASSES_FILE
         methods_file = base / cls.METHODS_FILE
 
-        return str(classes_file), str(methods_file)
+        return classes_file, methods_file
 
     @classmethod
     def get_methods_output_dir(cls, base_path: str = ".") -> str:
