@@ -130,7 +130,6 @@ def main():
         # Create repository
         repo = JavaCodeRepositoryBuilder(neo4j_conn)
 
-        # Assuming you have your JavaCodeData instance
         builder.Config.setup_logging()
 
         java_code_data = builder.read_structure("../data/")

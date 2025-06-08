@@ -3,4 +3,6 @@
   - packages-classes
   - class-methods
   - package hierarchy
-  - 
+- override methods
+- overload methods
+- Vector DB 
