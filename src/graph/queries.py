@@ -55,7 +55,7 @@ rels = """
 """
 
 
-def schema_text() -> str:
+def get_java_schema_text() -> str:
     return f"""
   This is the schema representation of the Neo4j database.
   Node properties are the following:
@@ -64,3 +64,17 @@ def schema_text() -> str:
   {rels}
   Make sure to respect relationship types and directions
   """
+
+def get_java_message():
+    schema = get_java_schema_text()
+    return f"""
+    Task: Generate Cypher queries to query a Neo4j graph database based on the provided schema definition.
+    Instructions:
+    Use only the provided relationship types and properties.
+    Do not use any other relationship types or properties that are not provided.
+    If you cannot generate a Cypher statement based on the provided schema, explain the reason to the user.
+    Schema:
+    {schema}
+
+    Note: Do not include any explanations or apologies in your responses.
+    """

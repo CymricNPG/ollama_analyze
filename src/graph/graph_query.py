@@ -20,7 +20,8 @@ from neo4j.exceptions import CypherSyntaxError
 
 from graph import queries
 from graph.connection import Neo4jConnection
-from graph.generic_queries import get_system_message
+from graph.generic_queries import get_system_message, schema_text
+from graph.queries import get_java_message
 from llm.llm_access import LLMAccessLayer
 
 
@@ -28,7 +29,6 @@ class Neo4jQuery:
     def __init__(self, llm: LLMAccessLayer, neo4j_connection: Neo4jConnection):
         self.llm = llm
         self.neo4j_connection = neo4j_connection
-        self.schema = queries.schema_text()
 
     def _query_database(self, neo4j_query, params={}):
         result = self.neo4j_connection.query(neo4j_query, params)
@@ -38,7 +38,7 @@ class Neo4jQuery:
 
     def _construct_cypher(self, question, history=None):
         messages = [
-            {"role": "system", "content": get_system_message()},
+            {"role": "system", "content": get_system_message(get_java_message())},
             {"role": "user", "content": question},
         ]
         # Used for Cypher healing flows
@@ -46,13 +46,16 @@ class Neo4jQuery:
             messages.extend(history)
 
         completions = self.llm.chat_completion(
-            model="gpt-4",
+            model="qwen3:14b",#deepseek-r1:14b",
             temperature=0.0,
             messages=messages
         )
         return completions
 
-    def run(self, question, history=None, retry=True):
+    def run(self, question):
+        return self._run(question, None, True)
+
+    def _run(self, question, history=None, retry=True):
         # Construct Cypher statement
         cypher = self._construct_cypher(question, history)
         print(cypher)

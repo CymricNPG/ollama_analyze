@@ -1,0 +1,6 @@
+- extract neo4j Query from answer (Tags <cypher>)
+- enhance database 
+  - packages-classes
+  - class-methods
+  - package hierarchy
+  - 
