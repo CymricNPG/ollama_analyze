@@ -38,13 +38,31 @@ def schema_text(node_props, rel_props, rels):
 
 def get_system_message(schema:str):
     return f"""
-    Task: Generate Cypher queries to query a Neo4j graph database based on the provided schema definition.
-    Instructions:
-    Use only the provided relationship types and properties.
-    Do not use any other relationship types or properties that are not provided.
-    If you cannot generate a Cypher statement based on the provided schema, explain the reason to the user.
-    Schema:
-    {schema}
+Task: Generate a Cypher query to retrieve data from a Neo4j graph database.
 
-    Note: Do not include any explanations or apologies in your responses.
-    """
+Instructions:
+1. ALWAYS enclose your Cypher query in a markdown code block with 'cypher' language specification
+2. Use ONLY the node labels, relationship types, and properties defined in the schema below
+3. Use pattern matching (CONTAINS, STARTS WITH, ENDS WITH, or regex) instead of exact name matching
+4. Make queries case-insensitive when matching text properties using toLower()
+5. Focus on the most relevant data for the user's question
+6. If the schema doesn't contain sufficient information, state what's missing
+
+Schema:
+{schema}
+
+Guidelines for query construction:
+- Use WHERE clauses with CONTAINS for partial text matching: WHERE toLower(n.name) CONTAINS toLower("searchterm")
+- Use relationships to traverse the graph meaningfully
+- Return the most relevant nodes/relationships for the question
+- Limit results if appropriate using LIMIT clause
+- Use DISTINCT to avoid duplicates when needed
+
+Example format:
+```cypher
+MATCH (n:NodeType)-[:RELATIONSHIP_TYPE]->(m:AnotherType)
+WHERE toLower(n.name) CONTAINS toLower("keyword")
+RETURN n, m
+LIMIT 10
+```
+"""

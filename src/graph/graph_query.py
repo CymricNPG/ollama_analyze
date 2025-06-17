@@ -23,17 +23,20 @@ from graph.connection import Neo4jConnection
 from graph.generic_queries import get_system_message, schema_text
 from graph.queries import get_java_message
 from llm.llm_access import LLMAccessLayer
-
+import re
+from pystreamapi import Stream
 
 class Neo4jQuery:
     def __init__(self, llm: LLMAccessLayer, neo4j_connection: Neo4jConnection):
         self.llm = llm
         self.neo4j_connection = neo4j_connection
 
-    def _query_database(self, neo4j_query, params={}):
+    def query_database(self, neo4j_query:str, params={}):
         result = self.neo4j_connection.query(neo4j_query, params)
-        output = [r.values() for r in result]
-        output.insert(0, result.keys())
+        Stream.of(result).map(lambda x: x.get("m")).map(lambda x: x.get("code")) .to_list()
+        Stream.of(result).map(lambda x: x.get("m")).map(lambda x: x.get("methodName")) .for_each(print)
+        Stream.of(result).map(lambda x: x.get("m")).map(lambda x: x.get("className")) .for_each(print)
+        -> use neo4j init_data -> gleiches schema
         return output
 
     def _construct_cypher(self, question, history=None):
@@ -46,7 +49,7 @@ class Neo4jQuery:
             messages.extend(history)
 
         completions = self.llm.chat_completion(
-            model="qwen3:14b",#deepseek-r1:14b",
+            model="qwen3:14b",  # deepseek-r1:14b",
             temperature=0.0,
             messages=messages
         )
@@ -59,8 +62,10 @@ class Neo4jQuery:
         # Construct Cypher statement
         cypher = self._construct_cypher(question, history)
         print(cypher)
+        cypher = self._extract_cypher(cypher)
+        print("Found: "+cypher)
         try:
-            return self._query_database(cypher)
+            return self.query_database(cypher)
         # Self-healing flow
         except CypherSyntaxError as e:
             # If out of retries
@@ -80,3 +85,10 @@ class Neo4jQuery:
                 ],
                 retry=False
             )
+
+    def _extract_cypher(self, text: str) -> str:
+        """Extract Cypher queries from markdown code blocks."""
+        # Pattern to match ```cypher ... ``` blocks
+        pattern = r'```cypher\s*\n(.*?)\n```'
+        matches = re.findall(pattern, text, re.DOTALL)
+        return matches[0] if matches else ""

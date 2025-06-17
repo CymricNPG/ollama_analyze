@@ -15,7 +15,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 """
-
+import neo4j
 from neo4j import GraphDatabase
 from typing import Optional
 
@@ -27,7 +27,7 @@ class Neo4jConnection:
         if self.driver:
             self.driver.close()
     
-    def query(self, query: str, parameters: Optional[dict] = None):
+    def query(self, query: str, parameters: Optional[dict] = None) -> list[neo4j.Result]:
         with self.driver.session() as session:
             result = session.run(query, parameters)
             return list(result)

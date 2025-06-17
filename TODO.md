@@ -1,3 +1,5 @@
+Aktuell: graph_query -> datenstructure für result überlegen
+- Anleitung schreiben
 - extract neo4j Query from answer (Tags <cypher>)
 - enhance database 
   - packages-classes

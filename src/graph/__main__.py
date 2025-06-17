@@ -26,6 +26,10 @@ def main():
     neo4j_conn = Neo4jConnection("bolt://localhost:7687", "neo4j", "12345678")
     neo4j_query =   Neo4jQuery(llm_access, neo4j_conn)
     # error: neo4j_query.run("What methods do handle the pathfinding?")
-    neo4j_query.run("What methods use the class PreMove?")
+    # -> with ollama: neo4j_query.run("What methods use the class which contains the name PreMove?")
+    result =  neo4j_query.query_database("""MATCH (c:Class)-[:HAS_METHOD]->(m:Method)
+WHERE toLower(c.name) CONTAINS toLower("PreMove")
+RETURN m
+LIMIT 10""")
 if __name__ == "__main__":
     main()
