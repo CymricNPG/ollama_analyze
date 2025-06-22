@@ -15,6 +15,8 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 """
+from dataclasses import dataclass
+from typing import Optional
 
 node_props = """
   {
@@ -65,6 +67,7 @@ def get_java_schema_text() -> str:
   Make sure to respect relationship types and directions
   """
 
+
 def get_java_message():
     schema = get_java_schema_text()
     return f"""
@@ -78,3 +81,21 @@ def get_java_message():
 
     Note: Do not include any explanations or apologies in your responses.
     """
+
+
+@dataclass
+class JavaMethodNode:
+    method_name: Optional[str]
+    class_name: Optional[str]
+    java_doc: Optional[str]
+    code: Optional[str]
+
+    @classmethod
+    def from_node(cls, node):
+        """Create a JavaMethodNode instance from a Neo4j node."""
+        return cls(
+            method_name=node.get("methodName"),
+            class_name=node.get("className"),
+            java_doc=node.get("javaDoc"),
+            code=node.get("code")
+        )

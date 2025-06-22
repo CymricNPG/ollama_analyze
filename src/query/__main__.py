@@ -13,28 +13,25 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+Main application for querying data
 """
 from chroma.db_access import ChromaAccess
-from java import builder
-from java.models import JavaCodeData
+from graph.connection import Neo4jConnection
+from graph.graph_query import Neo4jQuery
+from llm.llm_access import LLMAccessLayer
+from query.code_query import CodeQueryOrchestrator
 
-# write data into DB
-def create_documents(data:JavaCodeData)->dict[str, str]:
-    result = {}
-    for clazz in data.classes:
-        result[clazz.class_name]= clazz.java_doc
-    for method in data.methods:
-        result[str(method.src)] = method.java_doc
-    return result
 
 def main():
+    query = "How is the stopping ofd trains in stations implemented?"
     chroma = ChromaAccess()
-    print("Chroma DB connected")
-    data = builder.read_structure("../data/")
-    print("Data read")
-    documents = create_documents(data)
-    print("Documents created")
-    chroma.index_documents(documents)
+    llm = LLMAccessLayer()
+    neo4j_connection = Neo4jConnection("bolt://localhost:7687", "neo4j", "12345678")
+    neo4j = Neo4jQuery(llm, neo4j_connection)
+    orchestrator = CodeQueryOrchestrator(llm, chroma, neo4j)
+    result = orchestrator.query_codebase(query)
+    print(result)
 
 
 if __name__ == "__main__":

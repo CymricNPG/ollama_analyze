@@ -21,7 +21,7 @@ from neo4j.exceptions import CypherSyntaxError
 from graph import queries
 from graph.connection import Neo4jConnection
 from graph.generic_queries import get_system_message, schema_text
-from graph.queries import get_java_message
+from graph.queries import get_java_message, JavaMethodNode
 from llm.llm_access import LLMAccessLayer
 import re
 from pystreamapi import Stream
@@ -31,13 +31,13 @@ class Neo4jQuery:
         self.llm = llm
         self.neo4j_connection = neo4j_connection
 
-    def query_database(self, neo4j_query:str, params={}):
+    def query_database(self, neo4j_query:str, params={})-> list[ JavaMethodNode]:
         result = self.neo4j_connection.query(neo4j_query, params)
-        Stream.of(result).map(lambda x: x.get("m")).map(lambda x: x.get("code")) .to_list()
-        Stream.of(result).map(lambda x: x.get("m")).map(lambda x: x.get("methodName")) .for_each(print)
-        Stream.of(result).map(lambda x: x.get("m")).map(lambda x: x.get("className")) .for_each(print)
-        -> use neo4j init_data -> gleiches schema
-        return output
+        nodes = (Stream.of(result)
+                 .map(lambda x: x.get("n"))
+                 .map(lambda x: JavaMethodNode.from_node(x))
+                 .to_list())
+        return nodes
 
     def _construct_cypher(self, question, history=None):
         messages = [
