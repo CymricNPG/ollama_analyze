@@ -26,12 +26,13 @@ from llm.llm_access import LLMAccessLayer
 import re
 from pystreamapi import Stream
 
+
 class Neo4jQuery:
     def __init__(self, llm: LLMAccessLayer, neo4j_connection: Neo4jConnection):
         self.llm = llm
         self.neo4j_connection = neo4j_connection
 
-    def query_database(self, neo4j_query:str, params={})-> list[ JavaMethodNode]:
+    def query_database(self, neo4j_query: str, params={}) -> list[JavaMethodNode]:
         result = self.neo4j_connection.query(neo4j_query, params)
         nodes = (Stream.of(result)
                  .map(lambda x: x.get("n"))
@@ -63,7 +64,7 @@ class Neo4jQuery:
         cypher = self._construct_cypher(question, history)
         print(cypher)
         cypher = self._extract_cypher(cypher)
-        print("Found: "+cypher)
+        print("Found: " + cypher)
         try:
             return self.query_database(cypher)
         # Self-healing flow

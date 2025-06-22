@@ -24,7 +24,7 @@ from query.code_query import CodeQueryOrchestrator
 
 
 def main():
-    query = "How is the stopping ofd trains in stations implemented?"
+    query = "How is the stopping of trains in stations implemented?"
     chroma = ChromaAccess()
     llm = LLMAccessLayer()
     neo4j_connection = Neo4jConnection("bolt://localhost:7687", "neo4j", "12345678")

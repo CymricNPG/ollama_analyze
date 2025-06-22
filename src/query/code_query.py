@@ -1,3 +1,5 @@
+import re
+
 from chroma.db_access import ChromaAccess
 from graph.graph_query import Neo4jQuery
 from llm.llm_access import LLMAccessLayer
@@ -11,17 +13,25 @@ class CodeQueryOrchestrator:
 
     def _reformulate_query_for_vector_search(self, user_query: str) -> str:
         system_prompt = """
-        Transform the user's question into effective search terms for finding relevant code documentation.
+        Transform the user's question into effective search terms for finding relevant code documentation. 
+        This will be used against a vector database to find relevant code snippets.
         
         Guidelines:
+        - ALWAYS enclose your Cypher query in a markdown code block with 'vector' language specification
         - Extract key technical terms, class names, method names
         - Include synonyms and related concepts
         - Focus on actionable programming concepts
         - Keep it concise but comprehensive
+        - Include maximum of 10 keywords
+        - Always start the answer with the user's question
         
         Example:
         User: "How do I handle database connections?"
-        Output: "database connection management connection pool JDBC SQL database access"
+        Output: 
+        ```vector 
+        "How do I handle database connections?" 
+        database connection management connection pool JDBC SQL database access
+        ```
         """
 
         messages = [
@@ -29,13 +39,22 @@ class CodeQueryOrchestrator:
             {"role": "user", "content": f"Transform this query: {user_query}"}
         ]
 
-        return self.llm.chat_completion(
-            model="qwen3:14b",
+        result = self.llm.chat_completion(
+            model="qwen3:8b",
             temperature=0.1,
             messages=messages
         )
+        print(result)
+        return self._extract_vector(result)
 
-    def _expand_context_via_graph(self, chroma_results) -> list:
+    def _extract_vector(self, text: str) -> str:
+        """Extract vector database queries from markdown code blocks."""
+        # Pattern to match ```cypher ... ``` blocks
+        pattern = r'```vector\s*\n(.*?)\n```'
+        matches = re.findall(pattern, text, re.DOTALL)
+        return matches[0] if matches else ""
+
+    def _expand_context_via_graph(self, user_query: str, chroma_results) -> list:
         """
         Extract entity names from ChromaDB results and find related entities in Neo4j
         """
@@ -44,10 +63,14 @@ class CodeQueryOrchestrator:
 
         # Build graph traversal query
         graph_expansion_query = f"""
-        Find all classes, methods, and relationships related to: {', '.join(entity_names)}
-        Include inheritance hierarchies, method calls, and package relationships.
+        Query: {user_query}  
+        Starting Classes: {', '.join(entity_names)}
         """
-
+        #     f"""
+        # Find all classes, methods, and relationships related to: {', '.join(entity_names)}
+        # Include inheritance hierarchies, method calls, and package relationships.
+        # """
+        # TODO use original query !!! ->
         # Use your existing Neo4jQuery to get related entities
         graph_context = self.neo4j_query.run(graph_expansion_query)
 
@@ -57,14 +80,8 @@ class CodeQueryOrchestrator:
         """
         Parse ChromaDB results to extract class names, method names, etc.
         """
-        entities = []
-
         # Extract from metadata if available
-        for doc in chroma_results.get('documents', []):
-            # Parse document content to find class/method names
-            # This depends on how your documentation is structured
-            pass
-
+        entities = [r.get('key') for r in chroma_results]
         return entities
 
     def _generate_final_answer(self, user_query: str, chroma_results, graph_context) -> str:
@@ -116,7 +133,6 @@ class CodeQueryOrchestrator:
             messages=messages
         )
 
-
     def query_codebase(self, user_query: str) -> str:
         """
         Main method that orchestrates the three-step process
@@ -129,7 +145,7 @@ class CodeQueryOrchestrator:
         chroma_results = self.chroma.search_documents(reformulated_query)
 
         print("# Expand context through graph database")
-        graph_context = self._expand_context_via_graph(chroma_results)
+        graph_context = self._expand_context_via_graph(user_query, chroma_results)
 
         print("# Generate final answer with all context")
         final_answer = self._generate_final_answer(user_query, chroma_results, graph_context)
